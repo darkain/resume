@@ -9,26 +9,44 @@
 /* Variables */
 /* Base */
 body {
-	background: #252827;
+	background: #252729;
 	font-size: 16px;
 }
+
 p {
 	font-weight: 300;
 }
+
 strong {
 	font-weight: 600;
 }
+
 h1 {
 	font-family: 'Saira', sans-serif;
 	letter-spacing: 1.5px;
-	color: #ffffff;
+	color: #fff;
 	font-weight: 400;
 	font-size: 2.4em;
 }
+
+p {
+	text-align:justify;
+}
+
+a {
+	color:lightgoldenrodyellow;
+	text-decoration:none;
+}
+
+a:hover, a:active {
+	text-decoration:underline;
+}
+
 #content {
 	margin-top: 50px;
 	text-align: center;
 }
+
 /* Timeline */
 .timeline {
 	border-left: 4px solid #004ffc;
@@ -49,12 +67,14 @@ h1 {
 	/*max-width: 30%;*/
 	margin-left:7em;
 }
+
 .timeline h1 {
 	font-family: 'Saira', sans-serif;
 	letter-spacing: 1.5px;
 	font-weight: 100;
 	font-size: 1.4em;
 }
+
 .timeline h2,
 .timeline h3 {
 	font-family: 'Saira', sans-serif;
@@ -62,23 +82,27 @@ h1 {
 	font-weight: 400;
 	font-size: 1.4em;
 }
+
 .timeline .event {
 	border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 	padding-bottom: 25px;
 	margin-bottom: 50px;
 	position: relative;
 }
+
 .timeline .event:last-of-type {
 	padding-bottom: 0;
 	margin-bottom: 0;
 	border: none;
 }
+
 .timeline .event:before,
 .timeline .event:after {
 	position: absolute;
 	display: block;
 	top: 0;
 }
+
 .timeline .event:before {
 	left: -217.5px;
 	color: rgba(255, 255, 255, 0.4);
@@ -89,8 +113,9 @@ h1 {
 	min-width: 120px;
 	font-family: 'Saira', sans-serif;
 }
+
 .timeline .event:after {
-	box-shadow: 0 0 0 4px #004ffc;
+	box-shadow: 0 0 0 4px cornflowerblue;
 	left: -57.85px;
 	background: #313534;
 	border-radius: 50%;
@@ -98,9 +123,6 @@ h1 {
 	width: 11px;
 	content: "";
 	top: 5px;
-}
-p {
-	text-align:justify;
 }
 </style>
 </head>
@@ -165,7 +187,7 @@ p {
 			<section>
 				<h2>Electronics</h2>
 
-				<p>At age 12, I started learning electronics. Created simple digital and analog circuits on a solderless breadboard.</p>
+				<p>At age 12, I started learning electronics, creating simple digital and analog circuits on a solderless breadboard.</p>
 			</section>
 		</li>
 
@@ -196,7 +218,9 @@ p {
 
 				<p>Created the "Darkain Alpha Enigne", a tile based RPG game engine written in Visual Basic 6.0 using DirectX 7 (DirectDraw, DirectInput, DirectSound) for multimedia support. The game engine includes a basic game editor which uses Win32 GDI API for painting tiles on the canvas.</p>
 
-				<cite><a target="_blank" href="https://web.archive.org/web/20110429170052/http://www.darkain.com/programming/visual-basic/">Visual Basic Source Code Release</a> on Archive.org</cite>
+				<cite><ul>
+					<li><a target="_blank" href="https://web.archive.org/web/20110429170052/http://www.darkain.com/programming/visual-basic/">Visual Basic Source Code Release</a> on Archive.org</li>
+				</ul></cite>
 			</section>
 		</li>
 
@@ -211,7 +235,10 @@ p {
 
 
 				<p>Due to the success of the RM-900 plugin, friends asked me to make a plugin for Winamp which would allow their gamepads to change songs, control playback, and change volume. Using DirectInput once again, this plugin was known as DX-Joystick.</p>
-				<cite><a target="_blank" href="https://web.archive.org/web/20011008002036/http://www.8op.com/darkain/">Winamp Plugin download links</a> on Archive.org</cite>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://web.archive.org/web/20011008002036/http://www.8op.com/darkain/">Winamp Plugin download links</a> on Archive.org</li>
+				</ul></cite>
 			</section>
 		</li>
 
@@ -224,7 +251,9 @@ p {
 
 				<p>Following the success of RM-900 and DX-Joystick, I merged these two plugins into a single plugin, RM-X General Purpose Control. I added a third module to this plugin known as API-KB which allowed global keyboard shortcuts and multimedia keys to control Winamp while the application is out of focus or minimized.</p>
 
-				<cite><a target="_blank" href="http://forums.winamp.com/showthread.php?t=82554">RM-X Release Announcement</a> on Winamp.com Forums</cite>
+				<cite><ul>
+					<li><a target="_blank" href="http://forums.winamp.com/showthread.php?t=82554">RM-X Release Announcement</a> on Winamp.com Forums</li>
+				</ul></cite>
 			</section>
 
 
@@ -246,7 +275,49 @@ p {
 
 				<p>I also helped publicly advocate for small development studios and independent video game developers, a movement which eventually went on to become the modern day Indie Video Game scene.</p>
 
-				<cite><a target="_blank" href="https://web.archive.org/web/20060715083142/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org</cite>
+				<cite><ul>
+					<li><a target="_blank" href="https://web.archive.org/web/20060715083142/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org</li>
+				</ul></cite>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2012">
+			<section>
+				<h2>PHP Universal Database Library (PUDL)</h2>
+
+				<p>Open-sourced my PHP library for connecting to and interacting with SQL databases. Created a SQL query generator that transparently works with <strong>MySQL</strong>, <strong>MariaDB</strong>, <strong>PerconaDB</strong>, <strong>PosgreSQL</strong>, <strong>SQLite</strong>, <strong>Microsoft SQL Server</strong>, and general <strong>ODBC</strong> servers. Unlike PDO bundled with PHP, the PUDL library works virtually identical with all engines with just a simple connection configuration change.</p>
+
+				<p>PUDL also has direct support for <strong>Galera</strong> multi-master clustering, including load balancing, high-availability, and multi-datacenter awareness.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://github.com/darkain/pudl">PHP Universal Database Library</a> on Github</li>
+				</ul></cite>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2014">
+			<section>
+				<h2>Altaform</h2>
+
+				<p>Launched my high performance and scalable PHP framework. The Altaform framework is built on top of the PHP Universal Database Library, Getvar, and TinyButXtreme.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://github.com/darkain/altaform">Altaform</a> on Github</li>
+					<li><a target="_blank" href="https://github.com/darkain/altaform-core">Altaform-Core</a> on Github</li>
+				</ul></cite>
+			</section>
+
+
+			<section>
+				<h2>Cospix</h2>
+
+				<p>Developed and launched the web site <a target="_blank" href="https://cospix.net">Cospix.net</a> as a high quality photo hosting web site for the global cosplay community.</p>
 			</section>
 		</li>
 
@@ -262,7 +333,6 @@ p {
 				<p>I created a distributed file storage system to synchronize photographs between camera tethered laptops, photo editing workstations, and printing/sales workstations.</p>
 			</section>
 		</li>
-
 
 
 
@@ -283,7 +353,13 @@ p {
 
 				<p>After initial prototype, I modeled an improved design using Autodesk Eagle, had the PCB printed, and assembled by hand. Changed to design to use Wi-Fi with a custom web server access from cell phones instead of accessed by Bluetooth.</p>
 
-				<cite><a target="_blank" href="https://pcbs.io/share/4Q2bK">PCB Design</a> on PCBs.io. <a target="_blank" href="https://github.com/cosplaylighting/led">LED Rendering Library</a>, <a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">Embedded Web Server</a> and <a target="_blank" href="https://github.com/darkain/usb-stable">Bluetooth Driver</a> on Github.</cite>
+				<cite><ul>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=wCLp0OPOcpI">Video of LED board in action</a> on Youtube</li>
+					<li><a target="_blank" href="https://pcbs.io/share/4Q2bK">PCB Design</a> on PCBs.io</li>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/led">LED Rendering Library</a> on Github</li>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">Embedded Web Server</a> on Github</li>
+					<li><a target="_blank" href="https://github.com/darkain/usb-stable">Bluetooth Driver</a> on Github</li>
+				</ul></cite>
 			</section>
 		</li>
 
@@ -305,7 +381,10 @@ p {
 
 				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
 
-				<cite><a target="_blank" href="https://github.com/cosplaylighting/IoT-Lua">IoT Lua</a> and <a target="_blank" href="https://github.com/cosplaylighting/lua-scripts">Animation Scripts</a> on Github</cite>
+				<cite><ul>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/IoT-Lua">IoT Lua</a> on Github</li>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/lua-scripts">Animation Scripts</a> on Github</li>
+				</ul></cite>
 			</section>
 		</li>
 
@@ -318,7 +397,9 @@ p {
 
 				<p>Created a Twitch Chat logging system using PHP in a daemon configuration (similar to Node.js for Javascript) that can log to either MariaDB or Sqlite.</p>
 
-				<cite><a target="_blank" href="https://github.com/darkain/php-twitch-bot">PHP Twitch Bot</a> on Github</cite>
+				<cite><ul>
+					<li><a target="_blank" href="https://github.com/darkain/php-twitch-bot">PHP Twitch Bot</a> on Github</li>
+				</ul></cite>
 			</section>
 		</li>
 
