@@ -55,7 +55,7 @@ a:hover, a:active {
 	background: rgba(255, 255, 255, 0.03);
 	color: rgba(255, 255, 255, 0.8);
 	font-family: 'Chivo', sans-serif;
-	margin: 50px auto;
+	margin: 50px auto 50px 120px;
 	letter-spacing: 0.5px;
 	position: relative;
 	line-height: 1.4em;
@@ -64,8 +64,6 @@ a:hover, a:active {
 	list-style: none;
 	text-align: left;
 	font-weight: 100;
-	/*max-width: 30%;*/
-	margin-left:7em;
 }
 
 .timeline h1 {
@@ -104,7 +102,7 @@ a:hover, a:active {
 }
 
 .timeline .event:before {
-	left: -217.5px;
+	left: -217px;
 	color: rgba(255, 255, 255, 0.4);
 	content: attr(data-date);
 	text-align: right;
@@ -116,13 +114,36 @@ a:hover, a:active {
 
 .timeline .event:after {
 	box-shadow: 0 0 0 4px cornflowerblue;
-	left: -57.85px;
+	left: -58px;
 	background: #313534;
 	border-radius: 50%;
 	height: 11px;
 	width: 11px;
 	content: "";
 	top: 5px;
+}
+
+
+@media (max-width: 800px) {
+	.timeline {
+		margin-left:50px;
+		padding:20px;
+		border-left:2px solid #004ffc;
+	}
+
+	.timeline .event:before {
+		left:-87px;
+		min-width:50px;
+		font-size:0.8em;
+		margin-top:-2px;
+	}
+
+	.timeline .event:after {
+		left:-25px;
+		width:8px;
+		height:8px;
+		box-shadow: 0 0 0 2px cornflowerblue;
+	}
 }
 </style>
 </head>
@@ -142,8 +163,6 @@ a:hover, a:active {
 				<h2>Things to list still...</h2>
 				<p>
 						glain
-						- winamp plugins
-						rmx
 						- visual basic game engine
 						cospix web site
 						cospix photo booth
@@ -166,6 +185,21 @@ a:hover, a:active {
 						Battle Game MMonster
 						https://web.archive.org/web/20090205015641/http://battle.darkain.com/
 				</p>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="Intro">
+			<section>
+				<h2>Introduction</h2>
+				<p>This page lists a brief overview for most of my history as a <strong>Software Engineer</strong>, <strong>Database Administrator</strong>, <strong>System Administrator</strong>, <strong>Network Administrator</strong>, and <strong>Electronics Hobbyist</strong>.</p>
+
+
+				<p>Recent projects that I've developed and released as open source are available on my <a target="_blank" href="https://github.com/darkain/">Personal Github</a> as well as my <a target="_blank" href="https://github.com/cosplaylighting">Organization Github</a>.</p>
+
+				<p>For a more detailed up to date list, I've compiled a <a target="_blank" href="https://gist.github.com/darkain/260d168d59b6e1561366349df635e6aa">Gist on Github</a>. This list contains recent issue reports and pull requests for open source projects, for example <strong>PHP</strong>, <strong>MariaDB</strong>, and <strong>FreeBSD</strong>.</p>
 			</section>
 		</li>
 
@@ -267,6 +301,20 @@ a:hover, a:active {
 
 
 
+		<li class="event" data-date="2003">
+			<section>
+				<h2>Wasabi Development</h2>
+				<p>Contributor to the Wasabi Development platform. Wasabi is a cross-platform application development SDK targeting Windows, Linux, and Mac.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://sourceforge.net/projects/wasabidev/">Wasabi Development</a> on SourceForge</li>
+				</ul></cite>
+			</section>
+		</li>
+
+
+
+
 		<li class="event" data-date="2005">
 			<section>
 				<h2>Homebrew Game Development</h2>
@@ -277,6 +325,76 @@ a:hover, a:active {
 
 				<cite><ul>
 					<li><a target="_blank" href="https://web.archive.org/web/20060715083142/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org</li>
+				</ul></cite>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2007">
+			<section>
+				<h2>RMX Automation</h2>
+
+				<p>Renamed RM-X General Purpose Control to RMX Automation and released it as open source software under the BSD license.</p>
+
+				<p>The public release of RMX supports <strong>Windows Media Player 7</strong>, <strong>Winamp 2</strong>, <strong>Winamp 3</strong>, <strong>Winamp 5</strong>, <strong>foobar2000</strong>, <strong>Radlight Player</strong>, <strong>BSPlayer</strong>, and as a stand-alone <strong>Win32 Application</strong> all from a single binary binary file by exposing multiple DLL entry points plus a WinMain entry point.</p>
+
+				<p>RMX Automation includes LuaPlus, an object oriented version of the Lua interpreter to make RMX fully scriptable. This release also includes 30 RMX Plugins which include support for integration with many more hardware and software platforms, such as X-10 home automation and several methods of TCP/IP network access. By writing a plugin once for RMX, it instantly works with all softare and systems listed above that RMX can communicate with, without the plugin needing any knowledge of those systems whatsoever.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://sourceforge.net/projects/rmx/">RMX Automation</a> on SourceForge</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20070203094729/http://wiki.darkain.com/wiki/Main_Page">RMX Automation</a> on Archive.org</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20070207044647/http://wiki.darkain.com/wiki/Plugin">List of RMX Plugins</a> on Archive.org</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20060517230827/http://www.darkain.com/forums/viewtopic.php?t=20">2005 RMX Changelog</a> on Archive.org</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20070328193745/http://wiki.darkain.com/wiki/ChangeLog">2006 RMX Changelog</a> on Archive.org</li>
+				</ul></cite>
+			</section>
+
+
+			<section>
+				<h2>Released Image Metabase</h2>
+
+				<p>Created a tool for indexing, searching, taggin, and previewing images from the internet. Image Metabase utilizes the LAMP stack.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://sourceforge.net/projects/imagemetabase/">Image Metabase</a> on SourceForge</li>
+				</ul></cite>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2008">
+			<section>
+				<h2>Launched CosplayMeetup.com</h2>
+
+				<p>Created a conceptual cosplay oriented social network. Code based on the Image Metabase project.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://web.archive.org/web/20080209141704/http://www.cosplaymeetup.com/">CosplayMeetup.com</a> on Archive.org</li>
+				</ul></cite>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2010">
+			<section>
+				<h2>Disaster Recovery</h2>
+
+				<p>Lead data recovery efforts after a 100% total loss of all on premise computer equipment after a devastating warehouse fire. By previously instituting a combination of online cloud backup and off site tape backup rotation, virtually no data was lost.</p>
+
+				<p>After data recover, lead the effort in designing new on premise infrastructure, including all equipment in server and networking room, client workstations, and building wiring for networking.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://www.king5.com/article/news/local/fire-destroys-puyallup-auto-parts-store/332823100">Hagens Auto Parts Fire</a> on King5 News, Seattle</li>
 				</ul></cite>
 			</section>
 		</li>
@@ -336,6 +454,7 @@ a:hover, a:active {
 
 
 
+
 		<li class="event" data-date="????">
 			<section>
 				<h2>Title</h2>
@@ -355,10 +474,16 @@ a:hover, a:active {
 
 				<cite><ul>
 					<li><a target="_blank" href="https://www.youtube.com/watch?v=wCLp0OPOcpI">Video of LED board in action</a> on Youtube</li>
+
 					<li><a target="_blank" href="https://pcbs.io/share/4Q2bK">PCB Design</a> on PCBs.io</li>
+
 					<li><a target="_blank" href="https://github.com/cosplaylighting/led">LED Rendering Library</a> on Github</li>
+
 					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">Embedded Web Server</a> on Github</li>
-					<li><a target="_blank" href="https://github.com/darkain/usb-stable">Bluetooth Driver</a> on Github</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/usb-stable">Arduino Bluetooth Driver</a> on Github</li>
+
+					<li><a target="_blank" href="https://gist.github.com/darkain/23da34f00ebf3f1572322df3605be51f">URL Decoder written in C</a> on Github Gist</li>
 				</ul></cite>
 			</section>
 		</li>
@@ -370,9 +495,9 @@ a:hover, a:active {
 			<section>
 				<h2>FreeBSD on Raspberry Pi</h2>
 
-				<p>Helped make packages available for FreeBSD on Pi Zero (ARMv6) and Pi 3b+ (ARMv8). Submitted patch for ZeroTier to properly detect ARM NEON on FreeBSD.</p>
+				<p>Helped make packages available for FreeBSD on Pi Zero (ARMv6) and Pi 3B+ (ARMv8). Submitted patch for ZeroTier to properly detect ARM NEON on FreeBSD.</p>
 
-				<p>Custom tuned ZFS for Raid-Z1 (3x USB thumbdrives) on Pi 3b+ to be used with a FEMP stack.</p>
+				<p>Custom tuned ZFS for Raid-Z1 (3x USB thumbdrives) on Pi 3B+ to be used with a FEMP stack.</p>
 			</section>
 
 
@@ -397,8 +522,21 @@ a:hover, a:active {
 
 				<p>Created a Twitch Chat logging system using PHP in a daemon configuration (similar to Node.js for Javascript) that can log to either MariaDB or Sqlite.</p>
 
+				<p>As of this writing, over 100,000 unique users and 1,500,000 messages have been logged to a Raspberry Pi 3B+ on a 3x 16GB USB ZFS Raid-Z1 array.</p>
+
 				<cite><ul>
 					<li><a target="_blank" href="https://github.com/darkain/php-twitch-bot">PHP Twitch Bot</a> on Github</li>
+				</ul></cite>
+			</section>
+
+
+			<section>
+				<h2>PUDL Documentation</h2>
+
+				<p>Launched a web site dedicated to the documentation of the PHP Universal Database Library (PUDL). As of this writing PUDL-Docs is still a very early work in progress.</p>
+
+				<cite><ul>
+					<li><a target="_blank" href="https://pudl.dev/">PUDL.dev</a> hosted by Github Pages</li>
 				</ul></cite>
 			</section>
 		</li>
@@ -410,7 +548,7 @@ a:hover, a:active {
 			<section>
 				<h2>Things To Improve</h2>
 
-				<p>There are still references to old source code released that are mentioned on the Archive.org Wayback Machine. I still have these archives in the exact state they were uploaded in many years ago. These archives, however, are now spread all over the place. It is time to start locating all of these archives and combine them into a single repository hosted on the Darkain.com web site.</p>
+				<p>There are still references to old source code released that are mentioned on the Archive.org Wayback Machine. I still have these source code archives in the exact state they were published and uploaded in many years ago. These archives, however, are now spread all over the place. It is time to start locating all of these archives and combine them into a single repository hosted on the Darkain.com web site.</p>
 			</section>
 		</li>
 
