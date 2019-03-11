@@ -6,6 +6,124 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#252730" />
 
+
+<script>
+"use strict";
+
+// EASY METHOD FOR TRIMMING ALL STRINGS WITHIN AN ARRAY
+Array.prototype.trim = function() {
+	return this.map(s => s.trim());
+}
+
+
+// EASY METHOD FOR GETTING UNIQUE ARRAY ELEMENTS
+// YES, THIS IS SLOW, BUT WE'RE DEALING WITH ~200 ITEMS TOTAL
+// PERFORMANCE IS A NON-ISSUE IN THIS PARTICULAR CASE
+Array.prototype.unique = function() {
+	var that = this;
+	return this.filter(function(item, pos) {
+		return that.indexOf(item) === pos;
+	});
+}
+
+
+// QUERY SELECTOR ITERATOR
+function query(selector, callback) {
+	var items = document.querySelectorAll(selector);
+	var ret = [];
+	for (var i=0; i<items.length; i++) {
+		var cbr = callback(items[i], i, items);
+		if (typeof cbr !== "undefined"  &&  cbr !== null) {
+			ret.push(cbr);
+		}
+	}
+	return ret;
+}
+
+
+// SHOW/HIDE ALL YEARS
+function display_years(display="block") {
+	query("li.event", function(item) {
+		item.style.display = display;
+	});
+}
+
+
+// SHOW/HIDE ALL YEARS AND SECTIONS
+function display_all(display="block") {
+	display_years(display);
+
+	query("section", function(item) {
+		item.style.display = display;
+	});
+}
+
+
+// LOOP THROUGH TAGS, HIDING ONES WE DON'T WANT
+function show_tags(tag) {
+	if (!tag) return;
+
+	display_years("none");
+
+	query("section", function(item) {
+		var tags = item.dataset.tags.split(',').trim();
+
+		if (tags.indexOf(tag) == -1) {
+			item.style.display = "none";
+		} else {
+			item.style.display = "block";
+			item.parentElement.style.display = "block";
+		}
+	});
+}
+
+
+// CREATE BUTTONS DYNAMICALLY
+function make_buttons(hash) {
+	var found = false;
+
+	var list = query("section", function(item) {
+		return item.dataset.tags.split(',').trim();
+	}).flat().unique().sort()
+
+	for (var i=0; i<list.length; i++) {
+		var button = document.createElement("BUTTON");
+		button.appendChild(document.createTextNode(list[i]));
+		document.querySelector('#buttons').appendChild(button);
+
+		if (list[i] === hash) {
+			button.classList.add("selected");
+			found = hash;
+		}
+
+		button.addEventListener("click", function() {
+			if (this.classList.contains("selected")) {
+				this.classList.remove("selected");
+				display_all();
+			} else {
+				var selected = document.querySelector('button.selected');
+				if (selected) selected.classList.remove("selected");
+				this.classList.add("selected");
+				show_tags(this.textContent);
+			}
+		});
+	}
+
+	return found;
+};
+
+
+// INITIALIZE CONTENT
+window.onload = function() {
+	show_tags(
+		make_buttons(
+			window.location.hash.replace("#", "")
+		)
+	);
+};
+</script>
+
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800');
 
@@ -140,6 +258,32 @@ aside ul li {
 	margin-left:-1em;
 }
 
+#buttons {
+	margin:20px auto;
+	max-width:1000px;
+	user-select:none;
+}
+
+#buttons button {
+	font-size:1em;
+	padding: 0.3em 0.7em;
+	margin:0.2em;
+	border: 2px solid rgba(0,0,0,0.7);
+	background:rgba(0,0,0,0.3);
+	outline:none;
+	color:rgba(255,255,255,0.7);
+}
+
+#buttons button:hover {
+	background-color:#cc4c00;
+	cursor:pointer;
+}
+
+#buttons button.selected {
+	background-color:#004ffc;
+	cursor:pointer;
+}
+
 @media (max-width: 800px) {
 	body {
 		font-size:0.8em;
@@ -172,11 +316,14 @@ aside ul li {
 <div id="content">
 	<h1>A History of Vince</h1>
 
+
+	<div id="buttons"></div>
+
 	<ul class="timeline">
 
 <!--
 		<li class="event" data-date="????">
-			<section>
+			<section data-tags="">
 				<h2>Things to list still...</h2>
 				<p>
 						glain
@@ -207,7 +354,7 @@ aside ul li {
 
 
 		<li class="event" data-date="????">
-			<section>
+			<section data-tags="">
 				<h2>TEMPLATE</h2>
 				<p>Text</p>
 				<aside><ol>
@@ -220,7 +367,7 @@ aside ul li {
 
 
 		<li class="event" data-date="Intro">
-			<section>
+			<section data-tags="other">
 				<h2>Introduction</h2>
 
 				<p>Hi, I'm <strong>Vince</strong>! Some may know me by my full name <strong>Vincent Milum Jr</strong>, or by one of my online handles: <strong>Darkain</strong>, <strong>DarkainMX</strong>, <strong>Darkain Multimedia</strong>, or <strong>Darkain Dragoon</strong>.</p>
@@ -251,7 +398,7 @@ aside ul li {
 
 
 		<li class="event" data-date="1995">
-			<section>
+			<section data-tags="other">
 				<h2>Chess</h2>
 
 				<p>At age 11, I placed 25th in the K-12 Chess National Championships.</p>
@@ -262,7 +409,7 @@ aside ul li {
 
 
 		<li class="event" data-date="1996">
-			<section>
+			<section data-tags="electronics">
 				<h2>Electronics</h2>
 
 				<p>At age 12, I started learning electronics, creating simple digital and analog circuits on a solderless breadboard.</p>
@@ -273,14 +420,14 @@ aside ul li {
 
 
 		<li class="event" data-date="1997">
-			<section>
+			<section data-tags="networking, windows">
 				<h2>Networking</h2>
 
 				<p>At age 13, I built my first LAN using systems donated from <a target="_blank" href="https://commons.wikimedia.org/wiki/Category:Boeing_surplus">Boeing Surplus</a> using <a target="_blank" href="https://en.wikipedia.org/wiki/10BASE2">10-BASE2</a> networking hardware on a pair of Intel 386sx 16MHz computers running Windows 3.11 for Workgroups. First successful networked application was <a target="_blank" href="https://en.wikipedia.org/wiki/Microsoft_Hearts">Microsoft Hearts</a> multiplayer. Later in the year, helped build networks for a computer lab and library for Gault Middle School, which I was attending at the time.</p>
 			</section>
 
 
-			<section>
+			<section data-tags="msdos, visual-basic, qbasic">
 				<h2>Programming</h2>
 
 				<p>Started learning computer programming using <a target="_blank" href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> for <a target="_blank" href="https://en.wikipedia.org/wiki/MS-DOS">MS-DOS</a>. Later in the year, I transitioned to Visual Basic 3.0 and 4.0.</p>
@@ -291,7 +438,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2000">
-			<section>
+			<section data-tags="games, visual-basic">
 				<h2>Visual Basic Games</h2>
 
 				<p>Created a Tic-Tac-Toe game a Lights Out game using Visual Basic form controls.</p>
@@ -302,7 +449,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="games, visual-basic, directx">
 				<h2>Alpha Game Engine</h2>
 
 				<p>Created the "Darkain Alpha Enigne", a tile based RPG game engine written in <strong>Visual Basic 6.0</strong> and <strong>DirectX 7</strong> (<em>DirectDraw</em>, <em>DirectInput</em>, <em>DirectSound</em>). The Darkain Alpha engine includes a basic game editor which uses Win32 GDI API for painting tiles on the canvas.</p>
@@ -315,7 +462,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="visual-basic, games">
 				<h2>Dreamcast VMS/VMI Editors</h2>
 
 				<p>Created simple editors to edit VMS and VMI content for the Sega Dreamcast. VMS is the hand-held game system that doubles as a memory card. VMI is an animated icon format to display on the VMS while not running a game. Editors are written in Visual Basic 5.0</p>
@@ -326,7 +473,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="visual-basic, irc">
 				<h2>Freak-Z / DooVoo IRC</h2>
 
 				<p>Created an IRC chat client in Visual Basic 5.0 that was released under the names Freak-Z IRC and DooVoo IRC.</p>
@@ -341,7 +488,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2001">
-			<section>
+			<section data-tags="winamp, visual-basic, rmx">
 				<h2>Winamp Plugins</h2>
 
 				<p>Created the initial RM-900 infrared remote control plugin for Winamp using Visual Basic to interact with the Creative Labs driver. Support was later expanded to include support for the RM-1000 remote as well.</p>
@@ -366,7 +513,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2002">
-			<section>
+			<section data-tags="winamp, wasabi, rmx, c++">
 				<h2>RM-X General Purpose Control</h2>
 
 				<p>Following the success of RM-900 and DX-Joystick, I merged these two plugins into a single plugin, RM-X General Purpose Control. I added a third module to this plugin known as API-KB which allowed global keyboard shortcuts and multimedia keys to control Winamp while the application is out of focus or minimized.</p>
@@ -383,7 +530,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="wasabi, c++">
 				<h2>Wasabi Development</h2>
 
 				<p>Contributor to the Wasabi Development platform. Wasabi is a cross-platform application development SDK targeting Windows, Linux, and Mac.</p>
@@ -394,7 +541,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="wasabi, c++, winamp">
 				<h2>Wasabi - DeJaVU Meter</h2>
 
 				<p>Created a simple volume meter, spectrum analyzer, and oscilloscope visualizer component for Winamp3 using the Wasabi SDK.</p>
@@ -409,7 +556,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="wasabi, c++, winamp">
 				<h2>Wasabi - Playlist Script Object</h2>
 
 				<p>Created a wrapper object to allow the Maki scripting engine to interface directly with Winamp3's playlist. This component allowed other developers to embed custom playlist layouts directly into their application skins.</p>
@@ -424,7 +571,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="wasabi, winamp, c++, web">
 				<h2>Wasabi - Web Server</h2>
 
 				<p>Created a web interface for interacting with Winamp3. This allowed playback control and playlist access remotely from anywhere in the world.</p>
@@ -437,7 +584,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="wasabi, games, c++">
 				<h2>Wasabi - Games</h2>
 
 				<p>Created a minesweepers clone as Llama Sweepers using the Wasabi SDK, playable within Winamp3.</p>
@@ -448,7 +595,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="virtualization">
 				<h2>Virtualization</h2>
 
 				<p>Started utilizing VMWare Workstation for multiple operation system testing of software I was developing. I actively tested RM-X on Windows NT4, 95, 98, 2000, ME, and XP through virtualization on a single workstation.</p>
@@ -459,7 +606,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2003">
-			<section>
+			<section data-tags="wasabi, c++, irc">
 				<h2>Wasabi - Internet Relay Chat Client</h2>
 
 				<p>Created a full featured IRC client using the Wasabi SDK. This IRC client is fully stand-alone, not requiring Winamp3 to run, possibly the only Wasabi application ever released that wasn't Winamp3 itself.</p>
@@ -474,7 +621,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="arm, games, c++">
 				<h2>Matrix Advance</h2>
 
 				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/C++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
@@ -497,7 +644,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2004">
-			<section>
+			<section data-tags="excel, exploits">
 				<h2>Microsoft Excel</h2>
 
 				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. Used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
@@ -508,7 +655,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2005">
-			<section>
+			<section data-tags="games, c++, arm">
 				<h2>Homebrew Game Development</h2>
 
 				<p>Created a series of small homebrew games for the Nintendo DS, plus an operating system to load and switch between applications.</p>
@@ -525,7 +672,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2007">
-			<section>
+			<section data-tags="rmx, c++, lua, winamp, web, networking">
 				<h2>RMX Automation</h2>
 
 				<p>Renamed RM-X General Purpose Control to RMX Automation and released it as open source software under the BSD license.</p>
@@ -552,7 +699,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="web, php, sql, javascript, photography">
 				<h2>Released Image Metabase</h2>
 
 				<p>Created a tool for indexing, searching, taggin, and previewing images from the internet. Image Metabase utilizes the LAMP stack.</p>
@@ -571,7 +718,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2008">
-			<section>
+			<section data-tags="web, php, sql, javascript">
 				<h2>Launched CosplayMeetup.com</h2>
 
 				<p>Created a conceptual cosplay oriented social network. Code based on the Image Metabase project.</p>
@@ -582,7 +729,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="web, php, sql, javascript">
 				<h2>Launched Repost.Me</h2>
 
 				<p>Created a public URL shortening service that also included analytics tracking.</p>
@@ -605,7 +752,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2010">
-			<section>
+			<section data-tags="windows, virtualization, networking">
 				<h2>Disaster Recovery</h2>
 
 				<p>Lead data recovery efforts after a 100% total loss of all on premise computer equipment after a devastating warehouse fire. By previously instituting a combination of online cloud backup and off site tape backup rotation, virtually no data was lost.</p>
@@ -618,7 +765,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="rmx, winamp, c++, networking">
 				<h2>RMX Remote</h2>
 
 				<p>Created an <strong>Android</strong> app that allows basic playback control of either <strong>Winamp</strong> or <strong>foobar2000</strong> media players on a desktop through LAN UDP broadcast messages. RMX Automation received a beta update at the same time to act as the RMX Server component.</p>
@@ -637,7 +784,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2011">
-			<section>
+			<section data-tags="windows, c++">
 				<h2>vmem</h2>
 
 				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/C++.</p>
@@ -654,7 +801,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2012">
-			<section>
+			<section data-tags="php, library, sql">
 				<h2>PHP Universal Database Library (PUDL)</h2>
 
 				<p>Open-sourced my PHP library for connecting to and interacting with SQL databases. Created a SQL query generator that transparently works with <strong>MySQL</strong>, <strong>MariaDB</strong>, <strong>PerconaDB</strong>, <strong>PosgreSQL</strong>, <strong>SQLite</strong>, <strong>Microsoft SQL Server</strong>, and general <strong>ODBC</strong> servers. Unlike PDO bundled with PHP, the PUDL library works virtually identical with all engines with just a simple connection configuration change.</p>
@@ -671,7 +818,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2014">
-			<section>
+			<section data-tags="php, library">
 				<h2>Altaform</h2>
 
 				<p>Launched my high performance and scalable PHP framework. The Altaform framework is built on top of the PHP Universal Database Library, Getvar, and TinyButXtreme.</p>
@@ -684,7 +831,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="php, library, web">
 				<h2>GetVar</h2>
 
 				<p>Released a simple PHP library in a single class for easier access of HTTP GET and POST data. GetVar supports automatic data normalization, UTF-8 safety, and the ability to decode JSON.</p>
@@ -695,7 +842,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="php, library, web">
 				<h2>TinyButXtreme</h2>
 
 				<p>Forked the TinyButStrong (TBS) HTML template processor by Skrol29 as TinyButXtreme (TBX). Initial fork was due to dispute over a bug that the initial developer refused to fix. Afterwards, I reorganized all source code and simplified the entire library API. Legacy and insecure features were removed. Fixed several other bugs that persisted in the original code base. New code is now extended with countless new functionality. Code updated for PHP 5.x and modern PHP 7.x support.</p>
@@ -708,7 +855,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="web, php, sql, javascript, photogrpahy">
 				<h2>Cospix</h2>
 
 				<p>Developed and launched the web site <a target="_blank" href="https://cospix.net">Cospix.net</a> as a high quality photo hosting web site for the global cosplay community. Cospix uses the Altaform framework, runs on both PHP and HHVM, uses MariaDB Galera Clustering, Redis caching, and ZFS Raid file storage across multiple systems in a cluster and across multiple data centers.</p>
@@ -731,7 +878,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2015">
-			<section>
+			<section data-tags="photography">
 				<h2>Cospix Photo Studio</h2>
 
 				<p>Founded the Cospix Photo Studio at Anime Expo (AX). Recruited and lead a team of 20 volunteers to help run the photo booth, including Photographers, Photo Editors, and Social Media Specialist. Anime Expo handles over 100,000 unique attendees over five days and our team captures over 10,000 photos each AX.</p>
@@ -748,7 +895,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2017">
-			<section>
+			<section data-tags="arm, c++, electronics">
 				<h2>Microcontrollers and Custom PCB Design</h2>
 
 				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth controllers. I ported the Bluetooth stack from AVR to ARM. Entire system debuted at BlizzCon.</p>
@@ -775,7 +922,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2018">
-			<section>
+			<section data-tags="electronics, c++, freebsd, raspberry-pi">
 				<h2>FreeBSD on Raspberry Pi</h2>
 
 				<p>Helped make packages available for FreeBSD on Pi Zero (ARMv6) and Pi 3B+ (ARMv8). Submitted patch for ZeroTier to properly detect ARM NEON on FreeBSD.</p>
@@ -784,7 +931,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="lua, c++, electronics">
 				<h2>Lua on Microcontrollers</h2>
 
 				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
@@ -800,7 +947,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2019">
-			<section>
+			<section data-tags="freebsd, raspberry-pi, php, web, irc">
 				<h2>FreeBSD on Raspberry Pi</h2>
 
 				<p>Created a Twitch Chat logging system using PHP in a daemon configuration (similar to Node.js for Javascript) that can log to either MariaDB or Sqlite.</p>
@@ -813,7 +960,7 @@ aside ul li {
 			</section>
 
 
-			<section>
+			<section data-tags="documentation, sql, php">
 				<h2>PUDL Documentation</h2>
 
 				<p>Launched a web site dedicated to the documentation of the PHP Universal Database Library (PUDL). As of this writing PUDL-Docs is still a very early work in progress.</p>
@@ -828,7 +975,7 @@ aside ul li {
 
 
 		<li class="event" data-date="TODO">
-			<section>
+			<section data-tags="other">
 				<h2>Things To Improve</h2>
 
 				<p>There are still references to old source code released that are mentioned on the Archive.org Wayback Machine. I still have these source code archives in the exact state they were published and uploaded in many years ago. These archives, however, are now spread all over the place. It is time to start locating all of these archives and combine them into a single repository hosted on the Darkain.com web site.</p>
