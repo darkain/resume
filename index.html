@@ -926,10 +926,28 @@ aside ul li {
 			<section data-tags="electronics, c++, freebsd, raspberry-pi">
 				<h2>FreeBSD on Raspberry Pi</h2>
 
-				<p>Helped make packages available for FreeBSD on Pi Zero (ARMv6) and Pi 3B+ (ARMv8). Submitted patch for ZeroTier to properly detect ARM NEON on FreeBSD.</p>
-
 				<p>Custom tuned ZFS for Raid-Z1 (3x USB thumbdrives) on Pi 3B+ to be used with a FEMP stack.</p>
 			</section>
+
+
+			<section data-tags="networking, c++, raspberry-pi, freebsd">
+				<h2>ZeroTier</h2>
+
+				<p>I fixed <em>IPv6-to-Text</em>, and <em>Text-to-IPv6</em> conversions to be RFC-5952 compliant by converting to standard <em>inet</em> functions.</p>
+
+				<p>I also fixed the ZeroTier port for the Raspberry Pi 1, 1A, 1B and Zero on FreeBSD by adding proper ARM NEON detection.</p>
+
+				<p>I use ZeroTier as a <strong>SD-WAN</strong> service to create a virtual multi-premise network. Each node connected to this network is a OPNsense router running OSPF. This enables any device connected to any private LAN at any location to be able to talk directly to any other device in any other location. This is the backbone for my MariaDB Galera cluster and ZFS multi-site replication.
+
+				<aside><ol>
+					<li><a target="_blank" href="https://tools.ietf.org/html/rfc5952">RFC-5952</a> on IETF.org</li>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/issues/850">IPv6 issue</a> on GitHub</li>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/853">IPv6 pull request</a> on GitHub</li>
+					<li><a target="_blank" href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231335">ARM NEON issue</a> on FreeBSD Bugzilla</li>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/848">ARM NEON pull request</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
 
 
 			<section data-tags="lua, c++, electronics, arduino">
