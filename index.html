@@ -256,6 +256,7 @@ li {counter-increment: li}
 aside ul li {
 	margin-top:1em;
 	margin-left:-1em;
+	margin-bottom:1em;
 }
 
 #buttons {
@@ -895,7 +896,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2017">
-			<section data-tags="arm, c++, electronics">
+			<section data-tags="arm, c++, electronics, arduino">
 				<h2>Microcontrollers and Custom PCB Design</h2>
 
 				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth controllers. I ported the Bluetooth stack from AVR to ARM. Entire system debuted at BlizzCon.</p>
@@ -931,14 +932,36 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="lua, c++, electronics">
+			<section data-tags="lua, c++, electronics, arduino">
 				<h2>Lua on Microcontrollers</h2>
 
 				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
 
+				<aside><ul>
+					<li>When compiling C/C++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
+				</ul></aside>
+
 				<aside><ol>
 					<li><a target="_blank" href="https://github.com/cosplaylighting/IoT-Lua">IoT Lua</a> on GitHub</li>
 					<li><a target="_blank" href="https://github.com/cosplaylighting/lua-scripts">Animation Scripts</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="c++, electronics, arduino, web">
+				<h2>ESP8266 Web Server</h2>
+
+				<p>Entirely rewrote the ESP8266 Web Server class. The initial server class by the ESP8266 community had countless stability issues that I fixed with my rewrite.</p>
+
+				<aside><ul>
+					<li>The initial web server used the Arduino string class for parsing HTTP requests, such as header data, URL, and URL parameters. Each item increased RAM usage substantially. I solved this by writing an inline memory tokenizer. This also had the side effect of significantly decreasing the time required to process a request. Both very critical for embedded systems.</li>
+
+					<li>Memory exhaustion is now handled gracefully. Previously, when "new" would fail due to insufficient memory, it would potentially crash the software on the board, forcing a watchdog reset. With the change to "malloc", there are additional checks for failed memory allocations which will now clear all memory allocation for the current HTTP request, and return an error code to the client.</li>
+				</ul></aside>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">ESP8266 Web Server</a> on GitHub</li>
+					<li><a target="_blank" href="https://github.com/esp8266/Arduino/pull/5636">ESP8266/Arduino Pull Request</a> on GitHub</li>
 				</ol></aside>
 			</section>
 		</li>
