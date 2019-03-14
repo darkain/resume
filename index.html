@@ -101,7 +101,8 @@ function show_tags(tag) {
 	display_years("none");
 
 	query("section", function(item) {
-		var tags = item.dataset.tags.split(',').trim();
+		var tags = item.dataset.tags;
+		tags = tags ? tags.split(',').trim() : [];
 
 		if (tags.indexOf(tag) == -1) {
 			item.style.display = "none";
@@ -118,7 +119,8 @@ function make_buttons(hash) {
 	var found = false;
 
 	var list = query("section", function(item) {
-		return item.dataset.tags.split(',').trim();
+		var		tags = item.dataset.tags;
+		return	tags ? tags.split(',').trim() : [];
 	}).flat().unique().sort()
 
 	for (var i=0; i<list.length; i++) {
@@ -739,6 +741,17 @@ aside ul li {
 
 					<li><a target="_blank" href="https://twitter.com/repostme">Repost.Me Bot</a> on Twitter</li>
 				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2009">
+			<section>
+				<h2>Remote Work</h2>
+
+				<p>Spent the year working 100% remote from the middle of the Rocky Mountains in Montana.</p>
 			</section>
 		</li>
 
