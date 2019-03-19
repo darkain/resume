@@ -973,14 +973,18 @@ aside ul li {
 			<section data-tags="arm, c++, electronics, arduino">
 				<h2>Microcontrollers and Custom PCB Design</h2>
 
-				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth controllers. I ported the Bluetooth stack from AVR to ARM. Entire system debuted at BlizzCon.</p>
+				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth game controllers. I ported the Bluetooth stack from AVR to ARM. The entire system was debuted at BlizzCon 2017.</p>
 
-				<p>After initial prototype, I modeled an improved design using Autodesk Eagle, had the PCB printed, and assembled by hand. Changed to design to use Wi-Fi with a custom web server access from cell phones instead of accessed by Bluetooth.</p>
+				<p>After initial prototype, I modeled an improved circuit design using <strong>Autodesk Eagle CAD</strong>, had the PCB printed, and then I assembled by them by hand. I also changed the design to use Wi-Fi with a custom web server with access via a cell phone instead of accessed by Bluetooth game controllers.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="https://www.youtube.com/watch?v=wCLp0OPOcpI">Video of LED board in action</a> on Youtube</li>
 
-					<li><a target="_blank" href="https://pcbs.io/share/4Q2bK">PCB Design</a> on PCBs.io</li>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/spider">"Spider" BlizzCon 2017 Demo</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/cosplaylighting/spider2">"Spider 2" Demo</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://pcbs.io/share/4Q2bK">"Spider 2" PCB Design</a> on PCBs.io</li>
 
 					<li><a target="_blank" href="https://github.com/cosplaylighting/led">LED Rendering Library</a> on GitHub</li>
 
@@ -1043,7 +1047,7 @@ aside ul li {
 			<section data-tags="c++, electronics, arduino, web">
 				<h2>ESP8266 Web Server</h2>
 
-				<p>Entirely rewrote the ESP8266 Web Server class. The initial server class by the ESP8266 community had countless stability issues that I fixed with my rewrite.</p>
+				<p>Entirely rewrote the ESP8266 Web Server class. The initial server class by the ESP8266 community had countless stability issues that I fixed with my rewrite. This enhanced web server was built for the "<strong>Spider 2</strong>" LED board to support an embedded <strong>Lua</strong> script editor and uploader.</p>
 
 				<aside><ul>
 					<li>The initial web server used the Arduino string class for parsing HTTP requests, such as header data, URL, and URL parameters. Each item increased RAM usage substantially. I solved this by writing an inline memory tokenizer. This also had the side effect of significantly decreasing the time required to process a request. Both very critical for embedded systems.</li>
