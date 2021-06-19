@@ -414,89 +414,14 @@ aside ul li {
 
 
 
-		<li class="event" data-date="1995">
-			<section data-tags="other">
-				<h2>Chess</h2>
+		<li class="event" data-date="2021">
+			<section data-tags="freebsd, virtualization, arm">
+				<h2>FreeBSD ARM64 / Aarch64 Virtualization Status Update</h2>
 
-				<p>At age 11, I placed 25th in the K-12 Chess National Championships.</p>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="1996">
-			<section data-tags="electronics">
-				<h2>Electronics</h2>
-
-				<p>At age 12, I started learning electronics, creating simple digital and analog circuits on a solderless breadboard.</p>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="1997">
-			<section data-tags="networking, windows">
-				<h2>Networking</h2>
-
-				<p>At age 13, I built my first LAN using systems donated from <a target="_blank" href="https://commons.wikimedia.org/wiki/Category:Boeing_surplus">Boeing Surplus</a> using <a target="_blank" href="https://en.wikipedia.org/wiki/10BASE2">10-BASE2</a> networking hardware on a pair of Intel 386sx 16MHz computers running Windows 3.11 for Workgroups. First successful networked application was <a target="_blank" href="https://en.wikipedia.org/wiki/Microsoft_Hearts">Microsoft Hearts</a> multiplayer. Later in the year, helped build networks for a computer lab and library for Gault Middle School, which I was attending at the time.</p>
-			</section>
-
-
-			<section data-tags="msdos, visual-basic, qbasic">
-				<h2>Programming</h2>
-
-				<p>Started learning computer programming using <a target="_blank" href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> for <a target="_blank" href="https://en.wikipedia.org/wiki/MS-DOS">MS-DOS</a>. Later in the year, I transitioned to Visual Basic 3.0 and 4.0.</p>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2000">
-			<section data-tags="games, visual-basic">
-				<h2>Visual Basic Games</h2>
-
-				<p>Created a Tic-Tac-Toe game a Lights Out game using Visual Basic form controls.</p>
+				<p>Hosted a panel discussing the current status of FreeBSD running under VMware ESXi-ARM Fling and Parallels Desktop for Apple M1. Presented information on status of virtual hardware support in the FreeBSD kernel, development status of guest tools, and performance metrics of bare metal vs ARM VM benchmarks.</p>
 
 				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/vb-games">VB Games</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="games, visual-basic, directx">
-				<h2>Alpha Game Engine</h2>
-
-				<p>Created the "Darkain Alpha Enigne", a tile based RPG game engine written in <strong>Visual Basic 6.0</strong> and <strong>DirectX 7</strong> (<em>DirectDraw</em>, <em>DirectInput</em>, <em>DirectSound</em>). The Darkain Alpha engine includes a basic game editor which uses Win32 GDI API for painting tiles on the canvas.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://web.archive.org/web/20110429170052/http://www.darkain.com/programming/visual-basic/">Release Announcement</a> on Archive.org</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/alpha">Alpha Engine</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="visual-basic, games">
-				<h2>Dreamcast VMS/VMI Editors</h2>
-
-				<p>Created simple editors to edit VMS and VMI content for the Sega Dreamcast. VMS is the hand-held game system that doubles as a memory card. VMI is an animated icon format to display on the VMS while not running a game. Editors are written in Visual Basic 5.0</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/dreamcast">Dreamcast VMS/VMI Editors</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="visual-basic, irc">
-				<h2>Freak-Z / DooVoo IRC</h2>
-
-				<p>Created an IRC chat client in Visual Basic 5.0 that was released under the names Freak-Z IRC and DooVoo IRC.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/freakz-irc">Freak-Z IRC Client</a> on GitHub</li>
+					<li><a target="_blank" href="https://youtu.be/3SUKJye54aI">FreeBSD Developer Summit June 2021</a> on YouTube</li>
 				</ol></aside>
 			</section>
 		</li>
@@ -504,24 +429,503 @@ aside ul li {
 
 
 
-		<li class="event" data-date="2001">
-			<section data-tags="winamp, visual-basic, rmx">
-				<h2>Winamp Plugins</h2>
+		<li class="event" data-date="2020">
+			<section data-tags="freebsd, virtualization, arm">
+				<h2>FreeBSD ARM64 / Aarch64 Virtualization</h2>
 
-				<p>Created the initial RM-900 infrared remote control plugin for Winamp using Visual Basic to interact with the Creative Labs driver. Support was later expanded to include support for the RM-1000 remote as well.</p>
+				<p>Lead the testing and patching efforts to get FreeBSD supporting the virtual hardware on VMware ESXi-ARM Fling.</p>
+			</section>
 
 
-				<p>Due to the success of the RM-900 plugin, friends asked me to make a plugin for Winamp which would allow their gamepads to change songs, control playback, and change volume. Using DirectInput once again, this plugin was known as DX-Joystick.</p>
+			<section data-tags="freebsd, virtualization, arm">
+				<h2>VMware open-vm-tools</h2>
+
+				<p>Ported open-vm-tools to ARM64 / Aarch64. While the code updates focused on FreeBSD, the majority of the changes were platform agnostic so they should work on Linux and other guest OSes. These changes were accepted and merged into open-vm-tools 11.3.0.</p>
 
 				<aside><ol>
-					<li><a target="_blank" href="https://web.archive.org/web/20011008002036/http://www.8op.com/darkain/">Winamp Plugin download links</a> on Archive.org</li>
+					<li><a target="_blank" href="https://github.com/vmware/open-vm-tools/releases/tag/stable-11.3.0">open-vm-tools 11.3.0</a> on GitHub</li>
+				</ol></aside>
+			</section>
+		</li>
 
-					<li><a target="_blank" href="https://web.archive.org/web/20011205040601/http://www.winamp.com/plugins/browse.jhtml?categoryName=General">RM900 Remote Control Plug-In for Winamp 2</a> on Archive.org</li>
 
 
-					<li><a target="_blank" href="https://github.com/darkain/RM-900">RM-900 Plugin for Winamp</a> on GitHub</li>
 
-					<li><a target="_blank" href="https://github.com/darkain/dxjoy">DX-Joystick Plugin for Winamp</a> on GitHub</li>
+		<li class="event" data-date="2019">
+			<section data-tags="freebsd, raspberry-pi, php, web, irc">
+				<h2>FreeBSD on Raspberry Pi</h2>
+
+				<p>Created a Twitch Chat logging system using PHP in a daemon configuration (similar to Node.js for Javascript) that can log to either MariaDB or Sqlite.</p>
+
+				<p>As of this writing, over 100,000 unique users and 1,500,000 messages have been logged to a Raspberry Pi 3B+ on a 3x 16GB USB ZFS Raid-Z1 array.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/php-twitch-bot">PHP Twitch Bot</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="documentation, sql, php">
+				<h2>PUDL Documentation</h2>
+
+				<p>Launched a web site dedicated to the documentation of the PHP Universal Database Library (PUDL). As of this writing PUDL-Docs is still a very early work in progress.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://pudl.dev/">PUDL.dev</a> hosted by Github Pages</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2018">
+			<section data-tags="electronics, c++, freebsd, raspberry-pi">
+				<h2>FreeBSD on Raspberry Pi</h2>
+
+				<p>Custom tuned ZFS for Raid-Z1 (3x USB thumbdrives) on Pi 3B+ to be used with a FEMP stack.</p>
+			</section>
+
+
+			<section data-tags="networking, c++, raspberry-pi, freebsd">
+				<h2>ZeroTier</h2>
+
+				<p>I fixed <em>IPv6-to-Text</em>, and <em>Text-to-IPv6</em> conversions to be RFC-5952 compliant by converting to standard <em>inet</em> functions.</p>
+
+				<p>I also fixed the ZeroTier port for the Raspberry Pi 1, 1A, 1B and Zero on FreeBSD by adding proper ARM NEON detection.</p>
+
+				<p>I use ZeroTier as a <strong>SD-WAN</strong> service to create a virtual multi-premise network. Each node connected to this network is a OPNsense router running OSPF. This enables any device connected to any private LAN at any location to be able to talk directly to any other device in any other location. This is the backbone for my MariaDB Galera cluster and ZFS multi-site replication.
+
+				<aside><ol>
+					<li><a target="_blank" href="https://tools.ietf.org/html/rfc5952">RFC-5952</a> on IETF.org</li>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/issues/850">IPv6 issue</a> on GitHub</li>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/853">IPv6 pull request</a> on GitHub</li>
+					<li><a target="_blank" href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231335">ARM NEON issue</a> on FreeBSD Bugzilla</li>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/848">ARM NEON pull request</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="lua, c++, electronics, arduino">
+				<h2>Lua on Microcontrollers</h2>
+
+				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
+
+				<aside><ul>
+					<li>When compiling C/C++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
+				</ul></aside>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/IoT-Lua">IoT Lua</a> on GitHub</li>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/lua-scripts">Animation Scripts</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="c++, electronics, arduino, web, lua">
+				<h2>ESP8266 Web Server</h2>
+
+				<p>Entirely rewrote the ESP8266 Web Server class. The initial server class by the ESP8266 community had countless stability issues that I fixed with my rewrite. This enhanced web server was built for the "<strong>Spider 2</strong>" LED board to support an embedded <strong>Lua</strong> script editor and uploader.</p>
+
+				<aside><ul>
+					<li>The initial web server used the Arduino string class for parsing HTTP requests, such as header data, URL, and URL parameters. Each item increased RAM usage substantially. I solved this by writing an inline memory tokenizer. This also had the side effect of significantly decreasing the time required to process a request. Both very critical for embedded systems.</li>
+
+					<li>Memory exhaustion is now handled gracefully. Previously, when "new" would fail due to insufficient memory, it would potentially crash the software on the board, forcing a watchdog reset. With the change to "malloc", there are additional checks for failed memory allocations which will now clear all memory allocation for the current HTTP request, and return an error code to the client.</li>
+				</ul></aside>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">ESP8266 Web Server</a> on GitHub</li>
+					<li><a target="_blank" href="https://github.com/esp8266/Arduino/pull/5636">ESP8266/Arduino Pull Request</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="exploits">
+				<h2>Physical address from IP address lookup</h2>
+
+				<p>The Tacoma WA based ISP Click-Network was using customer's router's MAC address for the reverse-DNS name lookup on their public IP address. Most consumer routers use sequential MAC addresses for their WAN, LAN, and Wi-Fi ports. There are publicly available databases of Wi-Fi MAC addresses tied to physical locations as a geolocation lookup service. By combining the reverse-DNS information containing MAC address, checking the two address above/below the WAN MAC, and comparing it to the Wi-fi GEO DNS database, it was possible to pinpoint where someone physically lived to within about 100ft just by knowing their IP address.</p>
+
+				<p>After discovering this information and validating it against known IP addresses and physical locations I was aware of, I reported this information to Click-Network for them to update their reverse-DNS information to no longer be physical location deterministic. This has since been fixed, so I am now sharing it publicly!</p>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2017">
+			<section data-tags="arm, c++, electronics, arduino">
+				<h2>Microcontrollers and Custom PCB Design</h2>
+
+				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth game controllers. I ported the Bluetooth stack from AVR to ARM. The entire system was debuted at BlizzCon 2017.</p>
+
+				<p>After initial prototype, I modeled an improved circuit design using <strong>Autodesk Eagle CAD</strong>, had the PCB printed, and then I assembled by them by hand. I also changed the design to use Wi-Fi with a custom web server with access via a cell phone instead of accessed by Bluetooth game controllers.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=wCLp0OPOcpI">Video of LED board in action</a> on Youtube</li>
+
+					<li><a target="_blank" href="https://github.com/cosplaylighting/spider">"Spider" BlizzCon 2017 Demo</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/cosplaylighting/spider2">"Spider 2" Demo</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://pcbs.io/share/4Q2bK">"Spider 2" PCB Design</a> on PCBs.io</li>
+
+					<li><a target="_blank" href="https://github.com/cosplaylighting/led">LED Rendering Library</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">Embedded Web Server</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/usb-stable">Arduino Bluetooth Driver</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://gist.github.com/darkain/23da34f00ebf3f1572322df3605be51f">URL Decoder written in C</a> on GitHub Gist</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2016">
+			<section data-tags="photography, web, freebsd, sql, virtualization, highlights">
+				<h2>Cospix</h2>
+
+				<p>Rewrote entire Cospix front-end for a responsive design, mobile friendliness, new image presentation, and infinite scrolling on the homepage. This is the design that is currently live today. Also migrated back-end infrastructure.</p>
+
+				<p><strong>Major Updates:</strong></p>
+				<aside><ul>
+					<li><strong>Flex-Box:</strong> Changed legacy square crop thumbnails to thumbnails that retain their aspect ratio. Created dynamic image scaler that changes dynamically based on the current viewport or browser window size.</li>
+
+					<li><strong>Discover:</strong> Created a content recommendation system based on trending viewership and personal historical browsing. This information is partially built from the graph model explained below, as well as pull from other internal content and analytics sources. I also created an infinite scrolling content loading system for the Discover page. Each new page chunk renders HTML server side in about 25-75ms time and is under 3KiB in size, keeping both bandwidth and latency as low as possible.</li>
+
+					<li><strong>Graph Model:</strong> Built a custom graph database and data model representing pop culture media hierarchies. Content is organized into either Universe <em>(eg: Square Enix)</em>, Series <em>(eg: Final Fantasy 4)</em>, Characters <em>(eg: Kain)</em>, and Outfit <em>(eg: Dragoon)</em>. These items are then linked through graph relationships, in that other characters from other series may be Dragoons. These tags are generated by users tagging their photos, and then automatically linking using an AI system by using heuristics from that user input.</li>
+
+					<li><strong>FreeBSD:</strong> Migrated hosting infrastructure from a VMWare vSphere 5.5 host with Debian 7 Virtual Machine to a FreeBSD 10 host with Jails. Switching from Debian VM to FreeBSD Jails cut MariaDB network latency in half.</li>
+				</ul></aside>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://cospix.net/">The Cospix.net Homepage</a></li>
+					<li><a target="_blank" href="https://cospix.net/darkain/galleries">My personal galleries</a> on Cospix.net</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="other, networking, linux">
+				<h2>Open Source Advocate</h2>
+
+				<p>To help promote various open source projects, I set up a 24/7 torrent seeding machine on a 1gbps WAN connection. I use this machine to host archives of Linux distributions and other open source projects. One example is the entirety of the Debian 7 CD and DVD archives for i386 and AMD64 platforms (70 ISOs in total). I also use host security focused ISOs such as Kali Linux and Tails. Beyond software, I also seed the complete Overclocked ReMix collection from their official torrents archive, featuring over 4000 original video game music remixes.</p>
+
+				<p>Not every organization that produces large software, operating systems, music collections, or other large data sets have the financial means to support the bandwidth to distribute their content. I help these projects out by donating my own bandwidth to their causes. Not all open source contributions are strictly code, and I believe this is a good way to me to help this open source and open content creators to share their works with the world freely.</p>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2015">
+			<section data-tags="photography">
+				<h2>Cospix Photo Studio</h2>
+
+				<p>Founded the Cospix Photo Studio at Anime Expo (AX). Recruited and lead a team of 20 volunteers to help run the photo booth, including Photographers, Photo Editors, and Social Media Specialist. Anime Expo handles over 100,000 unique attendees over five days and our team captures over 10,000 photos each AX.</p>
+
+				<p>I created a distributed file storage system to synchronize photographs between camera tethered laptops, photo editing workstations, and printing/sales workstations.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="http://www.anime-expo.org/2015/05/28/partnering-with-cospix-to-provide-photo-area-at-ax-2015-in-the-entertainment-hall/">Announcement of Cospix Partnership</a> on Anime-Expo.org</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2014">
+			<section data-tags="php, library">
+				<h2>Altaform</h2>
+
+				<p>Launched my high performance and scalable PHP framework. The Altaform framework is built on top of the PHP Universal Database Library, Getvar, and TinyButXtreme.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/altaform">Altaform</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/altaform-core">Altaform-Core</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="php, library, web">
+				<h2>GetVar</h2>
+
+				<p>Released a simple PHP library in a single class for easier access of HTTP GET and POST data. GetVar supports automatic data normalization, UTF-8 safety, and the ability to decode JSON.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/getvar">GetVar</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="php, library, web">
+				<h2>TinyButXtreme</h2>
+
+				<p>Forked the TinyButStrong (TBS) HTML template processor by Skrol29 as TinyButXtreme (TBX). Initial fork was due to dispute over a bug that the initial developer refused to fix. Afterwards, I reorganized all source code and simplified the entire library API. Legacy and insecure features were removed. Fixed several other bugs that persisted in the original code base. New code is now extended with countless new functionality. Code updated for PHP 5.x and modern PHP 7.x support.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/Skrol29/tinybutstrong">Original TinyButStrong</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/TinyButXtreme">Forked TinyButXtreme</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="web, php, sql, javascript, photography, highlights">
+				<h2>Cospix</h2>
+
+				<p>Developed and launched the web site <a target="_blank" href="https://cospix.net">Cospix.net</a> as a high quality photo hosting web site for the global cosplay community. Cospix uses the Altaform framework, runs on both PHP and HHVM, uses MariaDB Galera Clustering, Redis caching, and ZFS Raid file storage across multiple systems in a cluster and across multiple data centers.</p>
+
+				<p><strong>Technology Used:</strong></p>
+				<aside><ul>
+					<li><strong>ZFS File Storage:</strong> User photo storage is handled by a local ZFS Raid-Z pool. Temporary ZFS snapshots are taken every 5 minutes. Snapshots are then sent via SSH ZFS SEND + ZFS RECV to remote servers. Each server runs Lighttpd for serving photos. If a slave is missing a photo (uploaded in the last 5 minutes but not synced yet), Lighttpd automatically reverts to a NFS share back to the central master server to ensure any Lighttpd instance can serve any photo regardless of freshness.</li>
+
+					<li><strong>MariaDB Galera Database:</strong> Relational and graph data is stored in MariaDB with Galera clustering. Every node in the cluster handles read and write operations, to prevent worry about master delegation in case of node maintenance. The cluster is broken up into smaller sub-clusters in each data center. At least one node in each data center is backed by ZFS storage with snapshots taken on regular intervals as a method of keeping historical information and backups in case recovery is required.</li>
+
+					<li><strong>PHP Application:</strong> Main web site programmed in PHP with support for both the PHP and HHVM interpreter.</li>
+
+					<li><strong>Deployment:</strong> New versions of PHP code are deployed using a GitHub Web Hook which initiates a call back to the Cospix web site. This call on the local server then forwards a "sync" call on all PHP nodes to pull latest git code from a GitHub "live" branch. After code is synced on all systems, all static assets (JS, CSS) are rebuilt, compressed, and stored on Lighttpd servers.</li>
+				</ul></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2012">
+			<section data-tags="php, library, sql">
+				<h2>PHP Universal Database Library (PUDL)</h2>
+
+				<p>Open-sourced my PHP library for connecting to and interacting with SQL databases. Created a SQL query generator that transparently works with <strong>MySQL</strong>, <strong>MariaDB</strong>, <strong>PerconaDB</strong>, <strong>PosgreSQL</strong>, <strong>SQLite</strong>, <strong>Microsoft SQL Server</strong>, and general <strong>ODBC</strong> servers. Unlike PDO bundled with PHP, the PUDL library works virtually identical with all engines with just a simple connection configuration change.</p>
+
+				<p>PUDL also has direct support for <strong>Galera</strong> multi-master clustering, including load balancing, high-availability, and multi-datacenter awareness.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/pudl">PHP Universal Database Library</a> on GitHub</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2011">
+			<section data-tags="windows, c++">
+				<h2>vmem</h2>
+
+				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/C++.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="http://web.archive.org/web/20111214175457/http://badmofo.org/bmem/">Original bmem</a> on Archive.org</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/vmem">Updated vmem</a> on GitHub</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2010">
+			<section data-tags="windows, virtualization, networking">
+				<h2>Disaster Recovery</h2>
+
+				<p>Lead data recovery efforts after a 100% total loss of all on premise computer equipment after a devastating warehouse fire. By previously instituting a combination of online cloud backup and off site tape backup rotation, virtually no data was lost.</p>
+
+				<p>After data recover, lead the effort in designing new on premise infrastructure, including all equipment in server and networking room, client workstations, and building wiring for networking.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://www.king5.com/article/news/local/fire-destroys-puyallup-auto-parts-store/332823100">Hagen's Auto Parts Fire</a> on King5 News, Seattle</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="rmx, winamp, c++, networking">
+				<h2>RMX Remote</h2>
+
+				<p>Created an <strong>Android</strong> app that allows basic playback control of either <strong>Winamp</strong> or <strong>foobar2000</strong> media players on a desktop through LAN UDP broadcast messages. RMX Automation received a beta update at the same time to act as the RMX Server component.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/rmx-remote-android">RMX Remote Android App</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://www.apkmonk.com/app/com.darkain.rmx.remote/">RMX Remote Android App</a> on APK Monk</li>
+
+					<li><a target="_blank" href="https://web.archive.org/web/20170504203731/http://darkain.com/rmx-automation/">RMX Remote Release Announcement</a> on Archive.org</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2009">
+			<section>
+				<h2>Remote Work</h2>
+
+				<p>Spent the year working 100% remote from the middle of the Rocky Mountains in Montana.</p>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2008">
+			<section data-tags="web, php, sql, javascript">
+				<h2>Launched CosplayMeetup.com</h2>
+
+				<p>Created a conceptual cosplay oriented social network. Code based on the Image Metabase project.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://web.archive.org/web/20080209141704/http://www.cosplaymeetup.com/">CosplayMeetup.com</a> on Archive.org</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="web, php, sql, javascript">
+				<h2>Launched Repost.Me</h2>
+
+				<p>Created a public URL shortening service that also included analytics tracking.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/repost.me">Repost.Me</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://web.archive.org/web/20090328113222/http://repost.me/">Repost.Me at launch</a> on Archive.org</li>
+
+					<li><a target="_blank" href="https://web.archive.org/web/20100609184801/http://repost.me/">Repost.Me with analytics</a> on Archive.org</li>
+
+					<li><a target="_blank" href="https://wordpress.org/plugins/repostme-social-icon-links/">Repost.Me plugin</a> on WordPress.org</li>
+
+					<li><a target="_blank" href="https://twitter.com/repostme">Repost.Me Bot</a> on Twitter</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2007">
+			<section data-tags="rmx, c++, lua, winamp, web, networking, highlights">
+				<h2>RMX Automation</h2>
+
+				<p>Renamed RM-X General Purpose Control to RMX Automation and released it as open source software under the BSD license.</p>
+
+				<p>The public release of RMX supports <strong>Windows Media Player 7</strong>, <strong>Winamp 2</strong>, <strong>Winamp 3</strong>, <strong>Winamp 5</strong>, <strong>foobar2000</strong>, <strong>Radlight Player</strong>, <strong>BSPlayer</strong>, and as a stand-alone <strong>Win32 Application</strong> all from a single binary binary file by exposing multiple DLL entry points plus a WinMain entry point.</p>
+
+				<p>RMX Automation includes LuaPlus, an object oriented version of the Lua interpreter to make RMX fully scriptable. This release also includes 30 RMX Plugins which include support for integration with many more hardware and software platforms, such as X-10 home automation and several methods of TCP/IP network access. By writing a plugin once for RMX, it instantly works with all softare and systems listed above that RMX can communicate with, without the plugin needing any knowledge of those systems whatsoever.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/RMX-Automation">RMX Automation (2012-03-09)</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://sourceforge.net/projects/rmx/">RMX Automation (2007-01-18)</a> on SourceForge</li>
+
+					<li><a target="_blank" href="http://forums.winamp.com/showthread.php?threadid=184347">RM-X Back from the dead</a> on Winamp Forums</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20070203094729/http://wiki.darkain.com/wiki/Main_Page">RMX Automation</a> on Archive.org</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20070207044647/http://wiki.darkain.com/wiki/Plugin">List of RMX Plugins</a> on Archive.org</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20060517230827/http://www.darkain.com/forums/viewtopic.php?t=20">2005 RMX Changelog</a> on Archive.org</li>
+
+					<li><a target="_blank" href="http://web.archive.org/web/20070328193745/http://wiki.darkain.com/wiki/ChangeLog">2006 RMX Changelog</a> on Archive.org</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="web, php, sql, javascript, photography">
+				<h2>Released Image Metabase</h2>
+
+				<p>Created a tool for indexing, searching, taggin, and previewing images from the internet. Image Metabase utilizes the LAMP stack.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://sourceforge.net/projects/imagemetabase/">Image Metabase</a> on SourceForge</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/image-metabase">Image Metabase</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/image-metabase/blob/master/todo.txt">Discussion theorizing content and user meta-moderation system</a> on GitHub</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2005">
+			<section data-tags="community, games, c++, arm, highlights">
+				<h2>Homebrew / Indie Video Game Developer & Advocate</h2>
+
+				<p>Acted as moderator and community leader for the unofficial <strong>Nintendo DS</strong> community on <strong>LiveJournal</strong> with nearly 2,000 members. I used this and other online platforms to advocate for Homebrew video game developers, which eventually went on to become the modern Indie Video Game development community. During this era, homebrew game developers were not seen as part of the industry, but instead were treated like outcasts that did not belong. The big-three console gaming platforms at the time only wanted large AAA $60+ titles. By developing homebrew games and advocating for other developers using public internet channels, this helped shaped the indie gaming community and industry we have today on platforms such as Steam and the Nintendo Switch.</p>
+
+				<p>Beyond advocacy, I also developed a micro-kernel, user interface, application loader, and several demo applications within the Nintendo DS homebrew community as an operating system under the title <strong>DarkStar</strong> <em>(wordplay on my handle, Darkain)</em>. I built basic clones of Tic-Tac-Toe, Minespeepers, and Lights Out and a Paint Program as demo applications to show how the multi-application loader functioned. Other developers used it as a way to distribute their homebrew games and applications in larger bundles.</p>
+
+				<p>
+					I created the DS-Paint demo to illustrate some of the rendering API available within DarkStar. These features included
+					full touch screen support,
+					<a target="_blank" href="https://web.archive.org/web/20060510160849/http://ds.darkain.com/hack/dspaint6.jpg">15-bit RGB color</a>,
+					<a target="_blank" href="https://web.archive.org/web/20060510160530/http://ds.darkain.com/hack/pacmands.jpg">brush drawing</a>,
+					<a target="_blank" href="https://web.archive.org/web/20060510160746/http://ds.darkain.com/hack/dspaint3.jpg">shape drawing</a>,
+					<a target="_blank" href="https://web.archive.org/web/20060510160406/http://ds.darkain.com/hack/dspaint7.jpg">gradient drawing</a>,
+					<a target="_blank" href="https://web.archive.org/web/20060510160818/http://ds.darkain.com/hack/dspaint4.jpg">anti-aliasing</a>, and
+					<a target="_blank" href="https://web.archive.org/web/20060510160627/http://ds.darkain.com/hack/dspaint2.jpg">alpha blending</a>.
+				</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://nintendo-ds.livejournal.com/profile">Nintendo DS community</a> on LiveJournal</li>
+
+					<li><a target="_blank" href="https://web.archive.org/web/20051107012513/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org <em>(2005, working links, less content)</em></li>
+
+					<li><a target="_blank" href="https://web.archive.org/web/20060715083142/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org <em>(2006, broken links, more content)</em></li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2004">
+			<section data-tags="excel, exploits, visual-basic">
+				<h2>Microsoft Excel</h2>
+
+				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. Used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2003">
+			<section data-tags="wasabi, c++, irc">
+				<h2>Wasabi - Internet Relay Chat Client</h2>
+
+				<p>Created a full featured IRC client using the Wasabi SDK. This IRC client is fully stand-alone, not requiring Winamp3 to run, possibly the only Wasabi application ever released that wasn't Winamp3 itself.</p>
+
+				<p>The Wasabi IRC client supported full skinning and scripting, the same as Winamp3. I also created a full rich-text viewer to support formatted text from IRC, such as bold, italics, and color changing. The user interface also works similarly to how modern web browsers work, it is a tabbed interface where tabs can be pulled out of the parent container into new containers, and then later rejoined into the original container.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/wasabi-irc">Wasabi - IRC Client</a> on GitHub</li>
+
+					<li><a target="_blank" href="http://forums.shoutcast.com/showthread.php?t=132787">Wasabi - IRC Release Announcement</a> on Winamp Forums</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="arm, games, c++">
+				<h2>Matrix Advance</h2>
+
+				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/C++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://students.digipen.edu/~eemerson/projects_ma.htm">Original Matrix Attack</a> on DiGiPen</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/matrix-advance">Matrix Advance for GBA</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/matrix-advance/raw/master/compo/Matrix%20Advance.gba">Playable GBA ROM</a> via GitHub</li>
+
+					<li><a target="_blank" href="https://gbatemp.net/download/matrix-advance.5087/">Matrix Advance</a> on GBAtemp</li>
+
+					<li><a target="_blank" href="https://games.slashdot.org/story/03/09/19/0010241/gba-homebrew-game-contenders-released">Announcement of GBA Homebrew Game Contenders 2003</a> on Slashdot</li>
 				</ol></aside>
 			</section>
 		</li>
@@ -622,37 +1026,24 @@ aside ul li {
 
 
 
-		<li class="event" data-date="2003">
-			<section data-tags="wasabi, c++, irc">
-				<h2>Wasabi - Internet Relay Chat Client</h2>
+		<li class="event" data-date="2001">
+			<section data-tags="winamp, visual-basic, rmx">
+				<h2>Winamp Plugins</h2>
 
-				<p>Created a full featured IRC client using the Wasabi SDK. This IRC client is fully stand-alone, not requiring Winamp3 to run, possibly the only Wasabi application ever released that wasn't Winamp3 itself.</p>
-
-				<p>The Wasabi IRC client supported full skinning and scripting, the same as Winamp3. I also created a full rich-text viewer to support formatted text from IRC, such as bold, italics, and color changing. The user interface also works similarly to how modern web browsers work, it is a tabbed interface where tabs can be pulled out of the parent container into new containers, and then later rejoined into the original container.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/wasabi-irc">Wasabi - IRC Client</a> on GitHub</li>
-
-					<li><a target="_blank" href="http://forums.shoutcast.com/showthread.php?t=132787">Wasabi - IRC Release Announcement</a> on Winamp Forums</li>
-				</ol></aside>
-			</section>
+				<p>Created the initial RM-900 infrared remote control plugin for Winamp using Visual Basic to interact with the Creative Labs driver. Support was later expanded to include support for the RM-1000 remote as well.</p>
 
 
-			<section data-tags="arm, games, c++">
-				<h2>Matrix Advance</h2>
-
-				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/C++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
+				<p>Due to the success of the RM-900 plugin, friends asked me to make a plugin for Winamp which would allow their gamepads to change songs, control playback, and change volume. Using DirectInput once again, this plugin was known as DX-Joystick.</p>
 
 				<aside><ol>
-					<li><a target="_blank" href="https://students.digipen.edu/~eemerson/projects_ma.htm">Original Matrix Attack</a> on DiGiPen</li>
+					<li><a target="_blank" href="https://web.archive.org/web/20011008002036/http://www.8op.com/darkain/">Winamp Plugin download links</a> on Archive.org</li>
 
-					<li><a target="_blank" href="https://github.com/darkain/matrix-advance">Matrix Advance for GBA</a> on GitHub</li>
+					<li><a target="_blank" href="https://web.archive.org/web/20011205040601/http://www.winamp.com/plugins/browse.jhtml?categoryName=General">RM900 Remote Control Plug-In for Winamp 2</a> on Archive.org</li>
 
-					<li><a target="_blank" href="https://github.com/darkain/matrix-advance/raw/master/compo/Matrix%20Advance.gba">Playable GBA ROM</a> via GitHub</li>
 
-					<li><a target="_blank" href="https://gbatemp.net/download/matrix-advance.5087/">Matrix Advance</a> on GBAtemp</li>
+					<li><a target="_blank" href="https://github.com/darkain/RM-900">RM-900 Plugin for Winamp</a> on GitHub</li>
 
-					<li><a target="_blank" href="https://games.slashdot.org/story/03/09/19/0010241/gba-homebrew-game-contenders-released">Announcement of GBA Homebrew Game Contenders 2003</a> on Slashdot</li>
+					<li><a target="_blank" href="https://github.com/darkain/dxjoy">DX-Joystick Plugin for Winamp</a> on GitHub</li>
 				</ol></aside>
 			</section>
 		</li>
@@ -660,42 +1051,49 @@ aside ul li {
 
 
 
-		<li class="event" data-date="2004">
-			<section data-tags="excel, exploits, visual-basic">
-				<h2>Microsoft Excel</h2>
+		<li class="event" data-date="2000">
+			<section data-tags="games, visual-basic">
+				<h2>Visual Basic Games</h2>
 
-				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. Used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2005">
-			<section data-tags="community, games, c++, arm, highlights">
-				<h2>Homebrew / Indie Video Game Developer & Advocate</h2>
-
-				<p>Acted as moderator and community leader for the unofficial <strong>Nintendo DS</strong> community on <strong>LiveJournal</strong> with nearly 2,000 members. I used this and other online platforms to advocate for Homebrew video game developers, which eventually went on to become the modern Indie Video Game development community. During this era, homebrew game developers were not seen as part of the industry, but instead were treated like outcasts that did not belong. The big-three console gaming platforms at the time only wanted large AAA $60+ titles. By developing homebrew games and advocating for other developers using public internet channels, this helped shaped the indie gaming community and industry we have today on platforms such as Steam and the Nintendo Switch.</p>
-
-				<p>Beyond advocacy, I also developed a micro-kernel, user interface, application loader, and several demo applications within the Nintendo DS homebrew community as an operating system under the title <strong>DarkStar</strong> <em>(wordplay on my handle, Darkain)</em>. I built basic clones of Tic-Tac-Toe, Minespeepers, and Lights Out and a Paint Program as demo applications to show how the multi-application loader functioned. Other developers used it as a way to distribute their homebrew games and applications in larger bundles.</p>
-
-				<p>
-					I created the DS-Paint demo to illustrate some of the rendering API available within DarkStar. These features included
-					full touch screen support,
-					<a target="_blank" href="https://web.archive.org/web/20060510160849/http://ds.darkain.com/hack/dspaint6.jpg">15-bit RGB color</a>,
-					<a target="_blank" href="https://web.archive.org/web/20060510160530/http://ds.darkain.com/hack/pacmands.jpg">brush drawing</a>,
-					<a target="_blank" href="https://web.archive.org/web/20060510160746/http://ds.darkain.com/hack/dspaint3.jpg">shape drawing</a>,
-					<a target="_blank" href="https://web.archive.org/web/20060510160406/http://ds.darkain.com/hack/dspaint7.jpg">gradient drawing</a>,
-					<a target="_blank" href="https://web.archive.org/web/20060510160818/http://ds.darkain.com/hack/dspaint4.jpg">anti-aliasing</a>, and
-					<a target="_blank" href="https://web.archive.org/web/20060510160627/http://ds.darkain.com/hack/dspaint2.jpg">alpha blending</a>.
-				</p>
+				<p>Created a Tic-Tac-Toe game a Lights Out game using Visual Basic form controls.</p>
 
 				<aside><ol>
-					<li><a target="_blank" href="https://nintendo-ds.livejournal.com/profile">Nintendo DS community</a> on LiveJournal</li>
+					<li><a target="_blank" href="https://github.com/darkain/vb-games">VB Games</a> on GitHub</li>
+				</ol></aside>
+			</section>
 
-					<li><a target="_blank" href="https://web.archive.org/web/20051107012513/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org <em>(2005, working links, less content)</em></li>
 
-					<li><a target="_blank" href="https://web.archive.org/web/20060715083142/http://ds.darkain.com/hack/">Homebrew Nintendo DS Game Releases</a> on Archive.org <em>(2006, broken links, more content)</em></li>
+			<section data-tags="games, visual-basic, directx">
+				<h2>Alpha Game Engine</h2>
+
+				<p>Created the "Darkain Alpha Enigne", a tile based RPG game engine written in <strong>Visual Basic 6.0</strong> and <strong>DirectX 7</strong> (<em>DirectDraw</em>, <em>DirectInput</em>, <em>DirectSound</em>). The Darkain Alpha engine includes a basic game editor which uses Win32 GDI API for painting tiles on the canvas.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://web.archive.org/web/20110429170052/http://www.darkain.com/programming/visual-basic/">Release Announcement</a> on Archive.org</li>
+
+					<li><a target="_blank" href="https://github.com/darkain/alpha">Alpha Engine</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="visual-basic, games">
+				<h2>Dreamcast VMS/VMI Editors</h2>
+
+				<p>Created simple editors to edit VMS and VMI content for the Sega Dreamcast. VMS is the hand-held game system that doubles as a memory card. VMI is an animated icon format to display on the VMS while not running a game. Editors are written in Visual Basic 5.0</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/dreamcast">Dreamcast VMS/VMI Editors</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="visual-basic, irc">
+				<h2>Freak-Z / DooVoo IRC</h2>
+
+				<p>Created an IRC chat client in Visual Basic 5.0 that was released under the names Freak-Z IRC and DooVoo IRC.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/darkain/freakz-irc">Freak-Z IRC Client</a> on GitHub</li>
 				</ol></aside>
 			</section>
 		</li>
@@ -703,394 +1101,40 @@ aside ul li {
 
 
 
-		<li class="event" data-date="2007">
-			<section data-tags="rmx, c++, lua, winamp, web, networking, highlights">
-				<h2>RMX Automation</h2>
+		<li class="event" data-date="1997">
+			<section data-tags="networking, windows">
+				<h2>Networking</h2>
 
-				<p>Renamed RM-X General Purpose Control to RMX Automation and released it as open source software under the BSD license.</p>
-
-				<p>The public release of RMX supports <strong>Windows Media Player 7</strong>, <strong>Winamp 2</strong>, <strong>Winamp 3</strong>, <strong>Winamp 5</strong>, <strong>foobar2000</strong>, <strong>Radlight Player</strong>, <strong>BSPlayer</strong>, and as a stand-alone <strong>Win32 Application</strong> all from a single binary binary file by exposing multiple DLL entry points plus a WinMain entry point.</p>
-
-				<p>RMX Automation includes LuaPlus, an object oriented version of the Lua interpreter to make RMX fully scriptable. This release also includes 30 RMX Plugins which include support for integration with many more hardware and software platforms, such as X-10 home automation and several methods of TCP/IP network access. By writing a plugin once for RMX, it instantly works with all softare and systems listed above that RMX can communicate with, without the plugin needing any knowledge of those systems whatsoever.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/RMX-Automation">RMX Automation (2012-03-09)</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://sourceforge.net/projects/rmx/">RMX Automation (2007-01-18)</a> on SourceForge</li>
-
-					<li><a target="_blank" href="http://forums.winamp.com/showthread.php?threadid=184347">RM-X Back from the dead</a> on Winamp Forums</li>
-
-					<li><a target="_blank" href="http://web.archive.org/web/20070203094729/http://wiki.darkain.com/wiki/Main_Page">RMX Automation</a> on Archive.org</li>
-
-					<li><a target="_blank" href="http://web.archive.org/web/20070207044647/http://wiki.darkain.com/wiki/Plugin">List of RMX Plugins</a> on Archive.org</li>
-
-					<li><a target="_blank" href="http://web.archive.org/web/20060517230827/http://www.darkain.com/forums/viewtopic.php?t=20">2005 RMX Changelog</a> on Archive.org</li>
-
-					<li><a target="_blank" href="http://web.archive.org/web/20070328193745/http://wiki.darkain.com/wiki/ChangeLog">2006 RMX Changelog</a> on Archive.org</li>
-				</ol></aside>
+				<p>At age 13, I built my first LAN using systems donated from <a target="_blank" href="https://commons.wikimedia.org/wiki/Category:Boeing_surplus">Boeing Surplus</a> using <a target="_blank" href="https://en.wikipedia.org/wiki/10BASE2">10-BASE2</a> networking hardware on a pair of Intel 386sx 16MHz computers running Windows 3.11 for Workgroups. First successful networked application was <a target="_blank" href="https://en.wikipedia.org/wiki/Microsoft_Hearts">Microsoft Hearts</a> multiplayer. Later in the year, helped build networks for a computer lab and library for Gault Middle School, which I was attending at the time.</p>
 			</section>
 
 
-			<section data-tags="web, php, sql, javascript, photography">
-				<h2>Released Image Metabase</h2>
+			<section data-tags="msdos, visual-basic, qbasic">
+				<h2>Programming</h2>
 
-				<p>Created a tool for indexing, searching, taggin, and previewing images from the internet. Image Metabase utilizes the LAMP stack.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://sourceforge.net/projects/imagemetabase/">Image Metabase</a> on SourceForge</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/image-metabase">Image Metabase</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/image-metabase/blob/master/todo.txt">Discussion theorizing content and user meta-moderation system</a> on GitHub</li>
-				</ol></aside>
+				<p>Started learning computer programming using <a target="_blank" href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> for <a target="_blank" href="https://en.wikipedia.org/wiki/MS-DOS">MS-DOS</a>. Later in the year, I transitioned to Visual Basic 3.0 and 4.0.</p>
 			</section>
 		</li>
 
 
 
 
-		<li class="event" data-date="2008">
-			<section data-tags="web, php, sql, javascript">
-				<h2>Launched CosplayMeetup.com</h2>
+		<li class="event" data-date="1996">
+			<section data-tags="electronics">
+				<h2>Electronics</h2>
 
-				<p>Created a conceptual cosplay oriented social network. Code based on the Image Metabase project.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://web.archive.org/web/20080209141704/http://www.cosplaymeetup.com/">CosplayMeetup.com</a> on Archive.org</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="web, php, sql, javascript">
-				<h2>Launched Repost.Me</h2>
-
-				<p>Created a public URL shortening service that also included analytics tracking.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/repost.me">Repost.Me</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://web.archive.org/web/20090328113222/http://repost.me/">Repost.Me at launch</a> on Archive.org</li>
-
-					<li><a target="_blank" href="https://web.archive.org/web/20100609184801/http://repost.me/">Repost.Me with analytics</a> on Archive.org</li>
-
-					<li><a target="_blank" href="https://wordpress.org/plugins/repostme-social-icon-links/">Repost.Me plugin</a> on WordPress.org</li>
-
-					<li><a target="_blank" href="https://twitter.com/repostme">Repost.Me Bot</a> on Twitter</li>
-				</ol></aside>
+				<p>At age 12, I started learning electronics, creating simple digital and analog circuits on a solderless breadboard.</p>
 			</section>
 		</li>
 
 
 
 
-		<li class="event" data-date="2009">
-			<section>
-				<h2>Remote Work</h2>
-
-				<p>Spent the year working 100% remote from the middle of the Rocky Mountains in Montana.</p>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2010">
-			<section data-tags="windows, virtualization, networking">
-				<h2>Disaster Recovery</h2>
-
-				<p>Lead data recovery efforts after a 100% total loss of all on premise computer equipment after a devastating warehouse fire. By previously instituting a combination of online cloud backup and off site tape backup rotation, virtually no data was lost.</p>
-
-				<p>After data recover, lead the effort in designing new on premise infrastructure, including all equipment in server and networking room, client workstations, and building wiring for networking.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://www.king5.com/article/news/local/fire-destroys-puyallup-auto-parts-store/332823100">Hagen's Auto Parts Fire</a> on King5 News, Seattle</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="rmx, winamp, c++, networking">
-				<h2>RMX Remote</h2>
-
-				<p>Created an <strong>Android</strong> app that allows basic playback control of either <strong>Winamp</strong> or <strong>foobar2000</strong> media players on a desktop through LAN UDP broadcast messages. RMX Automation received a beta update at the same time to act as the RMX Server component.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/rmx-remote-android">RMX Remote Android App</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://www.apkmonk.com/app/com.darkain.rmx.remote/">RMX Remote Android App</a> on APK Monk</li>
-
-					<li><a target="_blank" href="https://web.archive.org/web/20170504203731/http://darkain.com/rmx-automation/">RMX Remote Release Announcement</a> on Archive.org</li>
-				</ol></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2011">
-			<section data-tags="windows, c++">
-				<h2>vmem</h2>
-
-				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/C++.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="http://web.archive.org/web/20111214175457/http://badmofo.org/bmem/">Original bmem</a> on Archive.org</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/vmem">Updated vmem</a> on GitHub</li>
-				</ol></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2012">
-			<section data-tags="php, library, sql">
-				<h2>PHP Universal Database Library (PUDL)</h2>
-
-				<p>Open-sourced my PHP library for connecting to and interacting with SQL databases. Created a SQL query generator that transparently works with <strong>MySQL</strong>, <strong>MariaDB</strong>, <strong>PerconaDB</strong>, <strong>PosgreSQL</strong>, <strong>SQLite</strong>, <strong>Microsoft SQL Server</strong>, and general <strong>ODBC</strong> servers. Unlike PDO bundled with PHP, the PUDL library works virtually identical with all engines with just a simple connection configuration change.</p>
-
-				<p>PUDL also has direct support for <strong>Galera</strong> multi-master clustering, including load balancing, high-availability, and multi-datacenter awareness.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/pudl">PHP Universal Database Library</a> on GitHub</li>
-				</ol></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2014">
-			<section data-tags="php, library">
-				<h2>Altaform</h2>
-
-				<p>Launched my high performance and scalable PHP framework. The Altaform framework is built on top of the PHP Universal Database Library, Getvar, and TinyButXtreme.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/altaform">Altaform</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/altaform-core">Altaform-Core</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="php, library, web">
-				<h2>GetVar</h2>
-
-				<p>Released a simple PHP library in a single class for easier access of HTTP GET and POST data. GetVar supports automatic data normalization, UTF-8 safety, and the ability to decode JSON.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/getvar">GetVar</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="php, library, web">
-				<h2>TinyButXtreme</h2>
-
-				<p>Forked the TinyButStrong (TBS) HTML template processor by Skrol29 as TinyButXtreme (TBX). Initial fork was due to dispute over a bug that the initial developer refused to fix. Afterwards, I reorganized all source code and simplified the entire library API. Legacy and insecure features were removed. Fixed several other bugs that persisted in the original code base. New code is now extended with countless new functionality. Code updated for PHP 5.x and modern PHP 7.x support.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/Skrol29/tinybutstrong">Original TinyButStrong</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/TinyButXtreme">Forked TinyButXtreme</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="web, php, sql, javascript, photography, highlights">
-				<h2>Cospix</h2>
-
-				<p>Developed and launched the web site <a target="_blank" href="https://cospix.net">Cospix.net</a> as a high quality photo hosting web site for the global cosplay community. Cospix uses the Altaform framework, runs on both PHP and HHVM, uses MariaDB Galera Clustering, Redis caching, and ZFS Raid file storage across multiple systems in a cluster and across multiple data centers.</p>
-
-				<p><strong>Technology Used:</strong></p>
-				<aside><ul>
-					<li><strong>ZFS File Storage:</strong> User photo storage is handled by a local ZFS Raid-Z pool. Temporary ZFS snapshots are taken every 5 minutes. Snapshots are then sent via SSH ZFS SEND + ZFS RECV to remote servers. Each server runs Lighttpd for serving photos. If a slave is missing a photo (uploaded in the last 5 minutes but not synced yet), Lighttpd automatically reverts to a NFS share back to the central master server to ensure any Lighttpd instance can serve any photo regardless of freshness.</li>
-
-					<li><strong>MariaDB Galera Database:</strong> Relational and graph data is stored in MariaDB with Galera clustering. Every node in the cluster handles read and write operations, to prevent worry about master delegation in case of node maintenance. The cluster is broken up into smaller sub-clusters in each data center. At least one node in each data center is backed by ZFS storage with snapshots taken on regular intervals as a method of keeping historical information and backups in case recovery is required.</li>
-
-					<li><strong>PHP Application:</strong> Main web site programmed in PHP with support for both the PHP and HHVM interpreter.</li>
-
-					<li><strong>Deployment:</strong> New versions of PHP code are deployed using a GitHub Web Hook which initiates a call back to the Cospix web site. This call on the local server then forwards a "sync" call on all PHP nodes to pull latest git code from a GitHub "live" branch. After code is synced on all systems, all static assets (JS, CSS) are rebuilt, compressed, and stored on Lighttpd servers.</li>
-				</ul></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2015">
-			<section data-tags="photography">
-				<h2>Cospix Photo Studio</h2>
-
-				<p>Founded the Cospix Photo Studio at Anime Expo (AX). Recruited and lead a team of 20 volunteers to help run the photo booth, including Photographers, Photo Editors, and Social Media Specialist. Anime Expo handles over 100,000 unique attendees over five days and our team captures over 10,000 photos each AX.</p>
-
-				<p>I created a distributed file storage system to synchronize photographs between camera tethered laptops, photo editing workstations, and printing/sales workstations.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="http://www.anime-expo.org/2015/05/28/partnering-with-cospix-to-provide-photo-area-at-ax-2015-in-the-entertainment-hall/">Announcement of Cospix Partnership</a> on Anime-Expo.org</li>
-				</ol></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2016">
-			<section data-tags="photography, web, freebsd, sql, virtualization, highlights">
-				<h2>Cospix</h2>
-
-				<p>Rewrote entire Cospix front-end for a responsive design, mobile friendliness, new image presentation, and infinite scrolling on the homepage. This is the design that is currently live today. Also migrated back-end infrastructure.</p>
-
-				<p><strong>Major Updates:</strong></p>
-				<aside><ul>
-					<li><strong>Flex-Box:</strong> Changed legacy square crop thumbnails to thumbnails that retain their aspect ratio. Created dynamic image scaler that changes dynamically based on the current viewport or browser window size.</li>
-
-					<li><strong>Discover:</strong> Created a content recommendation system based on trending viewership and personal historical browsing. This information is partially built from the graph model explained below, as well as pull from other internal content and analytics sources. I also created an infinite scrolling content loading system for the Discover page. Each new page chunk renders HTML server side in about 25-75ms time and is under 3KiB in size, keeping both bandwidth and latency as low as possible.</li>
-
-					<li><strong>Graph Model:</strong> Built a custom graph database and data model representing pop culture media hierarchies. Content is organized into either Universe <em>(eg: Square Enix)</em>, Series <em>(eg: Final Fantasy 4)</em>, Characters <em>(eg: Kain)</em>, and Outfit <em>(eg: Dragoon)</em>. These items are then linked through graph relationships, in that other characters from other series may be Dragoons. These tags are generated by users tagging their photos, and then automatically linking using an AI system by using heuristics from that user input.</li>
-
-					<li><strong>FreeBSD:</strong> Migrated hosting infrastructure from a VMWare vSphere 5.5 host with Debian 7 Virtual Machine to a FreeBSD 10 host with Jails. Switching from Debian VM to FreeBSD Jails cut MariaDB network latency in half.</li>
-				</ul></aside>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://cospix.net/">The Cospix.net Homepage</a></li>
-					<li><a target="_blank" href="https://cospix.net/darkain/galleries">My personal galleries</a> on Cospix.net</li>
-				</ol></aside>
-			</section>
-
-
-
-			<section data-tags="other, networking, linux">
-				<h2>Open Source Advocate</h2>
-
-				<p>To help promote various open source projects, I set up a 24/7 torrent seeding machine on a 1gbps WAN connection. I use this machine to host archives of Linux distributions and other open source projects. One example is the entirety of the Debian 7 CD and DVD archives for i386 and AMD64 platforms (70 ISOs in total). I also use host security focused ISOs such as Kali Linux and Tails. Beyond software, I also seed the complete Overclocked ReMix collection from their official torrents archive, featuring over 4000 original video game music remixes.</p>
-
-				<p>Not every organization that produces large software, operating systems, music collections, or other large data sets have the financial means to support the bandwidth to distribute their content. I help these projects out by donating my own bandwidth to their causes. Not all open source contributions are strictly code, and I believe this is a good way to me to help this open source and open content creators to share their works with the world freely.</p>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2017">
-			<section data-tags="arm, c++, electronics, arduino">
-				<h2>Microcontrollers and Custom PCB Design</h2>
-
-				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth game controllers. I ported the Bluetooth stack from AVR to ARM. The entire system was debuted at BlizzCon 2017.</p>
-
-				<p>After initial prototype, I modeled an improved circuit design using <strong>Autodesk Eagle CAD</strong>, had the PCB printed, and then I assembled by them by hand. I also changed the design to use Wi-Fi with a custom web server with access via a cell phone instead of accessed by Bluetooth game controllers.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=wCLp0OPOcpI">Video of LED board in action</a> on Youtube</li>
-
-					<li><a target="_blank" href="https://github.com/cosplaylighting/spider">"Spider" BlizzCon 2017 Demo</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://github.com/cosplaylighting/spider2">"Spider 2" Demo</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://pcbs.io/share/4Q2bK">"Spider 2" PCB Design</a> on PCBs.io</li>
-
-					<li><a target="_blank" href="https://github.com/cosplaylighting/led">LED Rendering Library</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">Embedded Web Server</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://github.com/darkain/usb-stable">Arduino Bluetooth Driver</a> on GitHub</li>
-
-					<li><a target="_blank" href="https://gist.github.com/darkain/23da34f00ebf3f1572322df3605be51f">URL Decoder written in C</a> on GitHub Gist</li>
-				</ol></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2018">
-			<section data-tags="electronics, c++, freebsd, raspberry-pi">
-				<h2>FreeBSD on Raspberry Pi</h2>
-
-				<p>Custom tuned ZFS for Raid-Z1 (3x USB thumbdrives) on Pi 3B+ to be used with a FEMP stack.</p>
-			</section>
-
-
-			<section data-tags="networking, c++, raspberry-pi, freebsd">
-				<h2>ZeroTier</h2>
-
-				<p>I fixed <em>IPv6-to-Text</em>, and <em>Text-to-IPv6</em> conversions to be RFC-5952 compliant by converting to standard <em>inet</em> functions.</p>
-
-				<p>I also fixed the ZeroTier port for the Raspberry Pi 1, 1A, 1B and Zero on FreeBSD by adding proper ARM NEON detection.</p>
-
-				<p>I use ZeroTier as a <strong>SD-WAN</strong> service to create a virtual multi-premise network. Each node connected to this network is a OPNsense router running OSPF. This enables any device connected to any private LAN at any location to be able to talk directly to any other device in any other location. This is the backbone for my MariaDB Galera cluster and ZFS multi-site replication.
-
-				<aside><ol>
-					<li><a target="_blank" href="https://tools.ietf.org/html/rfc5952">RFC-5952</a> on IETF.org</li>
-					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/issues/850">IPv6 issue</a> on GitHub</li>
-					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/853">IPv6 pull request</a> on GitHub</li>
-					<li><a target="_blank" href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231335">ARM NEON issue</a> on FreeBSD Bugzilla</li>
-					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/848">ARM NEON pull request</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-
-			<section data-tags="lua, c++, electronics, arduino">
-				<h2>Lua on Microcontrollers</h2>
-
-				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
-
-				<aside><ul>
-					<li>When compiling C/C++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
-				</ul></aside>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/cosplaylighting/IoT-Lua">IoT Lua</a> on GitHub</li>
-					<li><a target="_blank" href="https://github.com/cosplaylighting/lua-scripts">Animation Scripts</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="c++, electronics, arduino, web, lua">
-				<h2>ESP8266 Web Server</h2>
-
-				<p>Entirely rewrote the ESP8266 Web Server class. The initial server class by the ESP8266 community had countless stability issues that I fixed with my rewrite. This enhanced web server was built for the "<strong>Spider 2</strong>" LED board to support an embedded <strong>Lua</strong> script editor and uploader.</p>
-
-				<aside><ul>
-					<li>The initial web server used the Arduino string class for parsing HTTP requests, such as header data, URL, and URL parameters. Each item increased RAM usage substantially. I solved this by writing an inline memory tokenizer. This also had the side effect of significantly decreasing the time required to process a request. Both very critical for embedded systems.</li>
-
-					<li>Memory exhaustion is now handled gracefully. Previously, when "new" would fail due to insufficient memory, it would potentially crash the software on the board, forcing a watchdog reset. With the change to "malloc", there are additional checks for failed memory allocations which will now clear all memory allocation for the current HTTP request, and return an error code to the client.</li>
-				</ul></aside>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/cosplaylighting/Arduino/tree/master/libraries/ESP8266WebServer/src">ESP8266 Web Server</a> on GitHub</li>
-					<li><a target="_blank" href="https://github.com/esp8266/Arduino/pull/5636">ESP8266/Arduino Pull Request</a> on GitHub</li>
-				</ol></aside>
-			</section>
-		</li>
-
-
-
-
-		<li class="event" data-date="2019">
-			<section data-tags="freebsd, raspberry-pi, php, web, irc">
-				<h2>FreeBSD on Raspberry Pi</h2>
-
-				<p>Created a Twitch Chat logging system using PHP in a daemon configuration (similar to Node.js for Javascript) that can log to either MariaDB or Sqlite.</p>
-
-				<p>As of this writing, over 100,000 unique users and 1,500,000 messages have been logged to a Raspberry Pi 3B+ on a 3x 16GB USB ZFS Raid-Z1 array.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://github.com/darkain/php-twitch-bot">PHP Twitch Bot</a> on GitHub</li>
-				</ol></aside>
-			</section>
-
-
-			<section data-tags="documentation, sql, php">
-				<h2>PUDL Documentation</h2>
-
-				<p>Launched a web site dedicated to the documentation of the PHP Universal Database Library (PUDL). As of this writing PUDL-Docs is still a very early work in progress.</p>
-
-				<aside><ol>
-					<li><a target="_blank" href="https://pudl.dev/">PUDL.dev</a> hosted by Github Pages</li>
-				</ol></aside>
+		<li class="event" data-date="1995">
+			<section data-tags="other">
+				<h2>Chess</h2>
+
+				<p>At age 11, I placed 25th in the K-12 Chess National Championships.</p>
 			</section>
 		</li>
 
@@ -1106,6 +1150,9 @@ aside ul li {
 				<p>At this time, there are still about 20 code repositories that have not been uploaded that have been successfully found. These are all early works in Visual Basic and C++. The more recent code has been managed through GitHub since 2012 already.</p>
 			</section>
 		</li>
+
+
+
 
 	</ul>
 
