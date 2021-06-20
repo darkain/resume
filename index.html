@@ -15,7 +15,7 @@ Yes, in case you were wondering, I wrote all of this by hand. That includes the 
 
 Also, if you're wondering about the positioning of this note: Some browsers have a compatibility quirk where they need to read the <meta charset> tag within X number of bytes, which is why I always keep that near the very top of all documents. There are other small subtle compatibilities in this document too. Everything here is clean and designed for easy reading/editing.
 
-And yes, I'm aware of the line length. When writing normal code (such as C/C++, PHP, JavaScript, CSS), I try to keep my lines at or under 80 columns. Because this is English human text though, going through and changing a single word due to a typo can throw all of that off. Once I feel this document is more complete, I may go through and run it through a line-ending tool to wrap these long lines, but until then, please rely on your IDEs!
+And yes, I'm aware of the line length. When writing normal code (such as C/c/c++, PHP, JavaScript, CSS), I try to keep my lines at or under 80 columns. Because this is English human text though, going through and changing a single word due to a typo can throw all of that off. Once I feel this document is more complete, I may go through and run it through a line-ending tool to wrap these long lines, but until then, please rely on your IDEs!
 
 
 //TODO: topics to expand upon
@@ -61,6 +61,8 @@ And yes, I'm aware of the line length. When writing normal code (such as C/C++, 
 18) Homebrew / Indie Game Advocate
 
 19) Photography
+
+20) JavaScript self-replication web worm
 
 -->
 
@@ -450,13 +452,39 @@ aside ul li {
 					<li><a target="_blank" href="https://github.com/vmware/open-vm-tools/releases/tag/stable-11.3.0">open-vm-tools 11.3.0</a> on GitHub</li>
 				</ol></aside>
 			</section>
+
+
+			<section data-tags="sql, zfs">
+				<h2>MariaDB Galera Cluster ZFS Compatibility</h2>
+
+				<p>Developed the fix for MariaDB Galera Cluster to work correctly when using rsync WSREP SST replication on ZFS based file systems where the "snapdir" is visible to the operating system.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/MariaDB/server/pull/1445">MDEV-21709 ZFS snapdir=visible breaks Galera rsync SST replication</a> on GitHub</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="freebsd, arm, networking">
+				<h2>ZeroTier on FreeBSD</h2>
+
+				<p>Discovered and fixed several regression issues with ZeroTier on ARMv6, ARMv7, and ARMv8. These patches were tested and fixed under FreeBSD, but also apply to other ARM based operating systems.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/1288">FreeBSD ARMv6, ARMv7, and Aarch64 support</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/1294">Add ZT_NO_UNALIGNED_ACCESS for ARMv6/7 on FreeBSD</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://github.com/zerotier/ZeroTierOne/pull/1306">Fixing regression in AES for ARM targets</a> on GitHub</li>
+				</ol></aside>
+			</section>
 		</li>
 
 
 
 
 		<li class="event" data-date="2019">
-			<section data-tags="freebsd, raspberry-pi, php, web, irc">
+			<section data-tags="freebsd, raspberry-pi, php, web, irc, zfs">
 				<h2>FreeBSD on Raspberry Pi</h2>
 
 				<p>Created a Twitch Chat logging system using PHP in a daemon configuration (similar to Node.js for Javascript) that can log to either MariaDB or Sqlite.</p>
@@ -472,7 +500,7 @@ aside ul li {
 			<section data-tags="documentation, sql, php">
 				<h2>PUDL Documentation</h2>
 
-				<p>Launched a web site dedicated to the documentation of the PHP Universal Database Library (PUDL). As of this writing PUDL-Docs is still a very early work in progress.</p>
+				<p>Launched a web site dedicated to the documentation of the PHP Universal Database Library (PUDL). As of this writing. PUDL-Docs is still a very early work in progress with many missing pages.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="https://pudl.dev/">PUDL.dev</a> hosted by Github Pages</li>
@@ -484,14 +512,29 @@ aside ul li {
 
 
 		<li class="event" data-date="2018">
-			<section data-tags="electronics, c++, freebsd, raspberry-pi">
+			<section data-tags="sql, php, web">
+				<h2>phpMyAdmin with System-Versioned Table support</h2>
+
+				<p>MariaDB 10.3 added System-Versioned Table support, the ability for the database to automatically track historical change to records. This support altered some of the reporting features for MariaDB tables which broke phpMyAdmin in several different ways.</p>
+
+				<p>As an early adopter of System-Versioned Tables and heavily using phpMyAdmin in my workflows, I wrote the patches for phpMyAdmin to handle these new features in MariaDB.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/phpmyadmin/phpmyadmin/pull/14536">Fix for SYSTEM VERSIONED tables #14514, #14515, and #14516</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://mariadb.com/kb/en/system-versioned-tables/">System-Versioned Tables</a> on mariadb.com</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="electronics, c/c++, freebsd, raspberry-pi, zfs">
 				<h2>FreeBSD on Raspberry Pi</h2>
 
 				<p>Custom tuned ZFS for Raid-Z1 (3x USB thumbdrives) on Pi 3B+ to be used with a FEMP stack.</p>
 			</section>
 
 
-			<section data-tags="networking, c++, raspberry-pi, freebsd">
+			<section data-tags="networking, c/c++, raspberry-pi, freebsd, zfs">
 				<h2>ZeroTier</h2>
 
 				<p>I fixed <em>IPv6-to-Text</em>, and <em>Text-to-IPv6</em> conversions to be RFC-5952 compliant by converting to standard <em>inet</em> functions.</p>
@@ -514,13 +557,13 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="lua, c++, electronics, arduino">
+			<section data-tags="lua, c/c++, electronics, arduino">
 				<h2>Lua on Microcontrollers</h2>
 
 				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
 
 				<aside><ul>
-					<li>When compiling C/C++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
+					<li>When compiling C/c/c++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
 				</ul></aside>
 
 				<aside><ol>
@@ -531,7 +574,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="c++, electronics, arduino, web, lua">
+			<section data-tags="c/c++, electronics, arduino, web, lua">
 				<h2>ESP8266 Web Server</h2>
 
 				<p>Entirely rewrote the ESP8266 Web Server class. The initial server class by the ESP8266 community had countless stability issues that I fixed with my rewrite. This enhanced web server was built for the "<strong>Spider 2</strong>" LED board to support an embedded <strong>Lua</strong> script editor and uploader.</p>
@@ -563,7 +606,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2017">
-			<section data-tags="arm, c++, electronics, arduino">
+			<section data-tags="arm, c/c++, electronics, arduino">
 				<h2>Microcontrollers and Custom PCB Design</h2>
 
 				<p>Designed and created a prototype portable power supply with an ARM CPU paired with two ATTiny85 microcontrollers for controlling four independent LED arrays. Board is controlled remotely using Bluetooth game controllers. I ported the Bluetooth stack from AVR to ARM. The entire system was debuted at BlizzCon 2017.</p>
@@ -594,7 +637,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2016">
-			<section data-tags="photography, web, freebsd, sql, virtualization, highlights">
+			<section data-tags="photography, web, freebsd, sql, virtualization">
 				<h2>Cospix</h2>
 
 				<p>Rewrote entire Cospix front-end for a responsive design, mobile friendliness, new image presentation, and infinite scrolling on the homepage. This is the design that is currently live today. Also migrated back-end infrastructure.</p>
@@ -614,6 +657,17 @@ aside ul li {
 					<li><a target="_blank" href="https://cospix.net/">The Cospix.net Homepage</a></li>
 
 					<li><a target="_blank" href="https://cospix.net/darkain/galleries">My personal galleries</a> on Cospix.net</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="php, sql">
+				<h2>PHP persistent connections to MariaDB</h2>
+
+				<p>While working on Cospix and PUDL <em>(PHP Universal Database Library)</em>, I noticed connection error codes did not match the connection state between PHP and MariaDB Galera Cluster. This turned out to be an edge case with how PHP's MySQLi connector handled persistent connections.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/php/php-src/pull/2195">Fix Bug #73462 - Persistent connections don't set $connect_errno</a> on GitHub</li>
 				</ol></aside>
 			</section>
 
@@ -640,6 +694,17 @@ aside ul li {
 
 				<aside><ol>
 					<li><a target="_blank" href="http://www.anime-expo.org/2015/05/28/partnering-with-cospix-to-provide-photo-area-at-ax-2015-in-the-entertainment-hall/">Announcement of Cospix Partnership</a> on Anime-Expo.org</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="sql, linux">
+				<h2>MariaDB Galera Cluster on SmartOS</h2>
+
+				<p>SmartOS is an illumos kernel based operating system specializing in containerization and virtual machine workloads. One contain format it supports is a Linux compatibility layer known as LX Zones. Under LX Zones, I fixed the MariaDB Galera initialization code to properly support the way SmartOS with ZFS handles file size pre-allocation.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://github.com/codership/galera/pull/253">Fix for ENOSYS error on posix_fallocate</a> on GitHub</li>
 				</ol></aside>
 			</section>
 		</li>
@@ -685,8 +750,8 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="web, php, sql, javascript, photography, highlights">
-				<h2>Cospix</h2>
+			<section data-tags="web, php, sql, javascript, photography, zfs">
+				<h2>Launched Cospix</h2>
 
 				<p>Developed and launched the web site <a target="_blank" href="https://cospix.net">Cospix.net</a> as a high quality photo hosting web site for the global cosplay community. Cospix uses the Altaform framework, runs on both PHP and HHVM, uses MariaDB Galera Clustering, Redis caching, and ZFS Raid file storage across multiple systems in a cluster and across multiple data centers.</p>
 
@@ -724,10 +789,10 @@ aside ul li {
 
 
 		<li class="event" data-date="2011">
-			<section data-tags="windows, c++">
+			<section data-tags="windows, c/c++">
 				<h2>vmem</h2>
 
-				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/C++.</p>
+				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/c/c++.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="http://web.archive.org/web/20111214175457/http://badmofo.org/bmem/">Original bmem</a> on Archive.org</li>
@@ -754,7 +819,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="rmx, winamp, c++, networking">
+			<section data-tags="rmx, winamp, c/c++, networking">
 				<h2>RMX Remote</h2>
 
 				<p>Created an <strong>Android</strong> app that allows basic playback control of either <strong>Winamp</strong> or <strong>foobar2000</strong> media players on a desktop through LAN UDP broadcast messages. RMX Automation received a beta update at the same time to act as the RMX Server component.</p>
@@ -818,7 +883,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2007">
-			<section data-tags="rmx, c++, lua, winamp, web, networking, highlights">
+			<section data-tags="rmx, c/c++, lua, winamp, web, networking">
 				<h2>RMX Automation</h2>
 
 				<p>Renamed RM-X General Purpose Control to RMX Automation and released it as open source software under the BSD license.</p>
@@ -864,7 +929,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2005">
-			<section data-tags="community, games, c++, arm, highlights">
+			<section data-tags="community, games, c/c++, arm">
 				<h2>Homebrew / Indie Video Game Developer & Advocate</h2>
 
 				<p>Acted as moderator and community leader for the unofficial <strong>Nintendo DS</strong> community on <strong>LiveJournal</strong> with nearly 2,000 members. I used this and other online platforms to advocate for Homebrew video game developers, which eventually went on to become the modern Indie Video Game development community. During this era, homebrew game developers were not seen as part of the industry, but instead were treated like outcasts that did not belong. The big-three console gaming platforms at the time only wanted large AAA $60+ titles. By developing homebrew games and advocating for other developers using public internet channels, this helped shaped the indie gaming community and industry we have today on platforms such as Steam and the Nintendo Switch.</p>
@@ -896,18 +961,32 @@ aside ul li {
 
 
 		<li class="event" data-date="2004">
-			<section data-tags="excel, exploits, visual-basic">
+			<section data-tags="excel, exploits, basic">
 				<h2>Microsoft Excel</h2>
 
 				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. Used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
 			</section>
+
+
+			<section data-tags="web, exploits, javascript">
+				<h2>LiveJournal JavaScript Worm</h2>
+
+				<p>By combining some self-contained, self-replicating JavaScript code with a payload to automatically make a post on LiveJournal, I created one of the very first social media worms. This exploit only worked in Internet Explorer by wrapping the JavaScript code in custom XML that IE also supported for executing scripts separately from the main &lt;script&gt; HTML tag. LiveJournal used a tag deny-list rather than an allow-list, so this XML tag was not filtered, allowing the malicious JavaScript code to be ran in the browser. This code was then locked down requiring user interaction to click an HTML button rather than running automatically, and presenting as a Proof-of-Concept to LiveJournal, and they acted swiftly to patch the vulnerability within 24 hours.</p>
+
+				<p>The full exploit XML + JavaScript code was never published otherwise and has since been lost, all that remains is the sniplet of the self-replication part without the exploit payload.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://web.archive.org/web/20090508135921/http://www.darkain.com/tools/JavaScript_Self_Replicator/">JavaScript Self Replicator</a> on Archive.org</li>
+				</ol></aside>
+			</section>
+
 		</li>
 
 
 
 
 		<li class="event" data-date="2003">
-			<section data-tags="wasabi, c++, irc">
+			<section data-tags="wasabi, c/c++, irc">
 				<h2>Wasabi - Internet Relay Chat Client</h2>
 
 				<p>Created a full featured IRC client using the Wasabi SDK. This IRC client is fully stand-alone, not requiring Winamp3 to run, possibly the only Wasabi application ever released that wasn't Winamp3 itself.</p>
@@ -922,10 +1001,10 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="arm, games, c++">
+			<section data-tags="arm, games, c/c++">
 				<h2>Matrix Advance</h2>
 
-				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/C++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
+				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/c/c++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="https://students.digipen.edu/~eemerson/projects_ma.htm">Original Matrix Attack</a> on DiGiPen</li>
@@ -945,7 +1024,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2002">
-			<section data-tags="winamp, wasabi, rmx, c++">
+			<section data-tags="winamp, wasabi, rmx, c/c++">
 				<h2>RM-X General Purpose Control</h2>
 
 				<p>Following the success of RM-900 and DX-Joystick, I merged these two plugins into a single plugin, RM-X General Purpose Control. I added a third module to this plugin known as API-KB which allowed global keyboard shortcuts and multimedia keys to control Winamp while the application is out of focus or minimized.</p>
@@ -962,7 +1041,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="wasabi, c++">
+			<section data-tags="wasabi, c/c++">
 				<h2>Wasabi Development</h2>
 
 				<p>Contributor to the Wasabi Development platform. Wasabi is a cross-platform application development SDK targeting Windows, Linux, and Mac.</p>
@@ -973,7 +1052,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="wasabi, c++, winamp">
+			<section data-tags="wasabi, c/c++, winamp">
 				<h2>Wasabi - DeJaVU Meter</h2>
 
 				<p>Created a simple volume meter, spectrum analyzer, and oscilloscope visualizer component for Winamp3 using the Wasabi SDK.</p>
@@ -988,7 +1067,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="wasabi, c++, winamp">
+			<section data-tags="wasabi, c/c++, winamp">
 				<h2>Wasabi - Playlist Script Object</h2>
 
 				<p>Created a wrapper object to allow the Maki scripting engine to interface directly with Winamp3's playlist. This component allowed other developers to embed custom playlist layouts directly into their application skins.</p>
@@ -1003,7 +1082,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="wasabi, winamp, c++, web">
+			<section data-tags="wasabi, winamp, c/c++, web">
 				<h2>Wasabi - Web Server</h2>
 
 				<p>Created a web interface for interacting with Winamp3. This allowed playback control and playlist access remotely from anywhere in the world.</p>
@@ -1016,7 +1095,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="wasabi, games, c++">
+			<section data-tags="wasabi, games, c/c++">
 				<h2>Wasabi - Games</h2>
 
 				<p>Created a minesweepers clone as Llama Sweepers using the Wasabi SDK, playable within Winamp3.</p>
@@ -1038,7 +1117,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2001">
-			<section data-tags="winamp, visual-basic, rmx">
+			<section data-tags="winamp, basic, rmx">
 				<h2>Winamp Plugins</h2>
 
 				<p>Created the initial RM-900 infrared remote control plugin for Winamp using Visual Basic to interact with the Creative Labs driver. Support was later expanded to include support for the RM-1000 remote as well.</p>
@@ -1063,7 +1142,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2000">
-			<section data-tags="games, visual-basic">
+			<section data-tags="games, basic">
 				<h2>Visual Basic Games</h2>
 
 				<p>Created a Tic-Tac-Toe game a Lights Out game using Visual Basic form controls.</p>
@@ -1074,7 +1153,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="games, visual-basic, directx">
+			<section data-tags="games, basic, directx">
 				<h2>Alpha Game Engine</h2>
 
 				<p>Created the "Darkain Alpha Enigne", a tile based RPG game engine written in <strong>Visual Basic 6.0</strong> and <strong>DirectX 7</strong> (<em>DirectDraw</em>, <em>DirectInput</em>, <em>DirectSound</em>). The Darkain Alpha engine includes a basic game editor which uses Win32 GDI API for painting tiles on the canvas.</p>
@@ -1087,7 +1166,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="visual-basic, games">
+			<section data-tags="basic, games">
 				<h2>Dreamcast VMS/VMI Editors</h2>
 
 				<p>Created simple editors to edit VMS and VMI content for the Sega Dreamcast. VMS is the hand-held game system that doubles as a memory card. VMI is an animated icon format to display on the VMS while not running a game. Editors are written in Visual Basic 5.0</p>
@@ -1098,7 +1177,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="visual-basic, irc">
+			<section data-tags="basic, irc">
 				<h2>Freak-Z / DooVoo IRC</h2>
 
 				<p>Created an IRC chat client in Visual Basic 5.0 that was released under the names Freak-Z IRC and DooVoo IRC.</p>
@@ -1120,7 +1199,7 @@ aside ul li {
 			</section>
 
 
-			<section data-tags="msdos, visual-basic, qbasic">
+			<section data-tags="msdos, basic, basic">
 				<h2>Programming</h2>
 
 				<p>Started learning computer programming using <a target="_blank" href="https://en.wikipedia.org/wiki/QBasic">QBasic</a> for <a target="_blank" href="https://en.wikipedia.org/wiki/MS-DOS">MS-DOS</a>. Later in the year, I transitioned to Visual Basic 3.0 and 4.0.</p>
@@ -1158,7 +1237,7 @@ aside ul li {
 
 				<p>There are still references to old source code released that are mentioned on the Archive.org Wayback Machine. I still have these source code archives in the exact state they were published and uploaded in many years ago. These archives, however, are now spread all over the place. It is time to start locating all of these archives and combine them into a single repository hosted on the Darkain.com web site.</p>
 
-				<p>At this time, there are still about 20 code repositories that have not been uploaded that have been successfully found. These are all early works in Visual Basic and C++. The more recent code has been managed through GitHub since 2012 already.</p>
+				<p>At this time, there are still about 20 code repositories that have not been uploaded that have been successfully found. These are all early works in Visual Basic and c/c++. The more recent code has been managed through GitHub since 2012 already.</p>
 			</section>
 		</li>
 
