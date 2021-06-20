@@ -15,7 +15,7 @@ Yes, in case you were wondering, I wrote all of this by hand. That includes the 
 
 Also, if you're wondering about the positioning of this note: Some browsers have a compatibility quirk where they need to read the <meta charset> tag within X number of bytes, which is why I always keep that near the very top of all documents. There are other small subtle compatibilities in this document too. Everything here is clean and designed for easy reading/editing.
 
-And yes, I'm aware of the line length. When writing normal code (such as C/c/c++, PHP, JavaScript, CSS), I try to keep my lines at or under 80 columns. Because this is English human text though, going through and changing a single word due to a typo can throw all of that off. Once I feel this document is more complete, I may go through and run it through a line-ending tool to wrap these long lines, but until then, please rely on your IDEs!
+And yes, I'm aware of the line length. When writing normal code (such as C/C++, PHP, JavaScript, CSS), I try to keep my lines at or under 80 columns. Because this is English human text though, going through and changing a single word due to a typo can throw all of that off. Once I feel this document is more complete, I may go through and run it through a line-ending tool to wrap these long lines, but until then, please rely on your IDEs!
 
 
 //TODO: topics to expand upon
@@ -402,8 +402,6 @@ aside ul li {
 				<aside><ol>
 					<li><a target="_blank" href="https://github.com/darkain">My personal profile</a> on GitHub</li>
 
-					<li><a target="_blank" href="https://github.com/cosplaylighting">My organization profile</a> on GitHub</li>
-
 					<li><a target="_blank" href="https://jira.mariadb.org/secure/ViewProfile.jspa?name=darkain">My Jira profile</a> on MariaDB.org</li>
 
 					<li><a target="_blank" href="https://gist.github.com/darkain/260d168d59b6e1561366349df635e6aa">Detailed list of open source contributions</a> on GitHub Gist</li>
@@ -563,7 +561,7 @@ aside ul li {
 				<p>Ported the Lua programming language to ESP8266 and ESP32. I used this to create LED animation libraries for the SpiderBoard.</p>
 
 				<aside><ul>
-					<li>When compiling C/c/c++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
+					<li>When compiling C/C++ binaries, string literals are copied to RAM for direct addressing and execution. On the ESP8266, there is only 80KiB RAM, which fills up too quickly from these strings. I solved this by moving all strings from RAM to ROM. The stings included in the Lua library are only used for debugging purposes, so having slower access to them has no real effect on normal execution performance.</li>
 				</ul></aside>
 
 				<aside><ol>
@@ -792,7 +790,7 @@ aside ul li {
 			<section data-tags="windows, c/c++">
 				<h2>vmem</h2>
 
-				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/c/c++.</p>
+				<p>Forked and updated bmem by Brennen Underwood as vmem. Added support cleaner true-type font rendering and for real-time CPU clock speed display on systems with Intel SpeedStep (or AMD equivalent). Entire application written in C/C++.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="http://web.archive.org/web/20111214175457/http://badmofo.org/bmem/">Original bmem</a> on Archive.org</li>
@@ -1004,7 +1002,7 @@ aside ul li {
 			<section data-tags="arm, games, c/c++">
 				<h2>Matrix Advance</h2>
 
-				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/c/c++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
+				<p>Created a homebrew clone of the PC game Matrix Attack as the GameBoy Advance game Matrix Advance. Entire game written in C/C++ and some ARM ASM. Matrix Advance is a hexagon board based puzzle game featuring two simultaneous boards. Match five continuous gems of the same color on the active board to clear them. Gems can also be flipped between the active and passive boards.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="https://students.digipen.edu/~eemerson/projects_ma.htm">Original Matrix Attack</a> on DiGiPen</li>
