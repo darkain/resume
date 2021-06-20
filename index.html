@@ -437,17 +437,27 @@ aside ul li {
 			<section data-tags="freebsd, virtualization, arm">
 				<h2>FreeBSD ARM64 / Aarch64 Virtualization</h2>
 
-				<p>Lead the testing and patching efforts to get FreeBSD supporting the virtual hardware on VMware ESXi-ARM Fling.</p>
+				<p>Lead the testing and patching efforts to get FreeBSD as a guest operating system supporting the virtual hardware on VMware ESXi-ARM Fling hypervisor.</p>
+
+				<aside><ol>
+					<li><a target="_blank" href="https://flings.vmware.com/esxi-arm-edition">VMware ESXi Arm Edition</a></li>
+
+					<li><a target="_blank" href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=250308">[patch] Add support for VMware ESXi ARM Fling guest VM</a> on FreeBSD Bugzilla</li>
+				</ol></aside>
 			</section>
 
 
 			<section data-tags="freebsd, virtualization, arm">
-				<h2>VMware open-vm-tools</h2>
+				<h2>VMware open-vm-tools and Parallels Desktop parallels-tools</h2>
 
-				<p>Ported open-vm-tools to ARM64 / Aarch64. While the code updates focused on FreeBSD, the majority of the changes were platform agnostic so they should work on Linux and other guest OSes. These changes were accepted and merged into open-vm-tools 11.3.0.</p>
+				<p>Ported open-vm-tools and parallels-tools to ARM64 / Aarch64. While the code updates focused on FreeBSD, the majority of the changes were platform agnostic so they should work on Linux and other guest OSes. These changes were accepted and merged upstream into open-vm-tools 11.3.0.</p>
 
 				<aside><ol>
 					<li><a target="_blank" href="https://github.com/vmware/open-vm-tools/releases/tag/stable-11.3.0">open-vm-tools 11.3.0</a> on GitHub</li>
+
+					<li><a target="_blank" href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=256282">emulators/open-vm-tools: Update to 11.3.0 for Aarch64 support</a> on FreeBSD Bugzilla</li>
+
+					<li><a target="_blank" href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=256279">emulators/parallels-tools: add Aarch64 support</a> on FreeBSD Bugzilla</li>
 				</ol></aside>
 			</section>
 
@@ -959,7 +969,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2004">
-			<section data-tags="excel, exploits, basic">
+			<section data-tags="excel, exploits, basic, sql">
 				<h2>Microsoft Excel</h2>
 
 				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. Used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
@@ -1115,7 +1125,7 @@ aside ul li {
 
 
 		<li class="event" data-date="2001">
-			<section data-tags="winamp, basic, rmx">
+			<section data-tags="winamp, basic, rmx, directx">
 				<h2>Winamp Plugins</h2>
 
 				<p>Created the initial RM-900 infrared remote control plugin for Winamp using Visual Basic to interact with the Creative Labs driver. Support was later expanded to include support for the RM-1000 remote as well.</p>
