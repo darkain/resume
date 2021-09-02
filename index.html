@@ -60,7 +60,9 @@ function query(selector, callback) {
 
 
 // SHOW/HIDE ALL YEARS
-function display_years(display="block") {
+function display_years(display) {
+	display = (typeof display !== "undefined") ?  display : "block";
+
 	query("li.event", function(item) {
 		item.style.display = display;
 	});
@@ -69,6 +71,8 @@ function display_years(display="block") {
 
 // SHOW/HIDE ALL YEARS AND SECTIONS
 function display_all(display="block") {
+	display = (typeof display !== "undefined") ?  display : "block";
+
 	display_years(display);
 
 	query("section", function(item) {
