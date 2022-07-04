@@ -9,3 +9,4 @@ git pull
 cd ~/.ssh
 ln -s /vince/root/.ssh/authorized_keys2
 cd ~
+service sshd restart
