@@ -983,14 +983,16 @@ aside ul li {
 			<section data-tags="excel, exploits, basic, sql">
 				<h2>Microsoft Excel</h2>
 
-				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. Used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
+				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. I then used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Those scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
+
+				<p><em>2023 Update:</em> So here is the disclosure of the bug. With Excel's VBA, you can run SQL reports via ODBC. However, if you try to run anything other than a SELECT statement, a VBA error is thrown. I discovered that if you simple use <em>"ON ERROR RESUME NEXT"</em> that whatever SQL query was entered would be forwarded through the ODBC driver unmodified. This allowed for INSERT, UPDATE, and any othe query to execute.</p>
 			</section>
 
 
 			<section data-tags="web, exploits, javascript">
 				<h2>LiveJournal JavaScript Worm</h2>
 
-				<p>By combining some self-contained, self-replicating JavaScript code with a payload to automatically make a post on LiveJournal, I created one of the very first social media worms. This exploit only worked in Internet Explorer by wrapping the JavaScript code in custom XML that IE also supported for executing scripts separately from the main &lt;script&gt; HTML tag. LiveJournal used a tag deny-list rather than an allow-list, so this XML tag was not filtered, allowing the malicious JavaScript code to be ran in the browser. This code was then locked down requiring user interaction to click an HTML button rather than running automatically, and presenting as a Proof-of-Concept to LiveJournal, and they acted swiftly to patch the vulnerability within 24 hours.</p>
+				<p>By combining some self-contained, self-replicating JavaScript code with a payload to automatically make a post on LiveJournal, I created one of the very first social media worms. This exploit only worked in Internet Explorer by wrapping the JavaScript code in custom XML that IE also supported for executing scripts separately from the main &lt;script&gt; HTML tag. LiveJournal used a tag deny-list rather than an allow-list, so this XML tag was not filtered, allowing the malicious JavaScript code to be ran in the browser. This code was then locked down requiring user interaction to click an HTML button rather than running automatically, and presented as a Proof-of-Concept to LiveJournal staff, for which they acted swiftly to patch the vulnerability within 24 hours.</p>
 
 				<p>The full exploit XML + JavaScript code was never published otherwise and has since been lost, all that remains is the sniplet of the self-replication part without the exploit payload.</p>
 
