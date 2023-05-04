@@ -930,7 +930,7 @@ aside ul li {
 			<section data-tags="web, php, sql, javascript, photography">
 				<h2>Released Image Metabase</h2>
 
-				<p>Created a tool for indexing, searching, taggin, and previewing images from the internet. Image Metabase utilizes the LAMP stack.</p>
+				<p>Created a tool for indexing, searching, tagging, and previewing images from the internet. Image Metabase utilized the LAMP stack.</p>
 
 				<aside><ol>
 					<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/imagemetabase/">Image Metabase</a> on SourceForge</li>
@@ -938,6 +938,42 @@ aside ul li {
 					<li><a target="_blank" rel="noopener" href="https://github.com/darkain/image-metabase">Image Metabase</a> on GitHub</li>
 
 					<li><a target="_blank" rel="noopener" href="https://github.com/darkain/image-metabase/blob/master/todo.txt">Discussion theorizing content and user meta-moderation system</a> on GitHub</li>
+				</ol></aside>
+			</section>
+		</li>
+
+
+
+
+		<li class="event" data-date="2006">
+			<section data-tags="web, games">
+				<h2>Nintendo Wii Virtual Console Notification Service</h2>
+
+				<p>Created a script that would poll and scrape content from the Nintendo Wii Virtual Console e-shop, and then publish those results on the Darkain.com web site, as an RSS feed, and push notifications directly to registered user's Wii console's messaging service.</p>
+
+				<aside><ol>
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070218092132/http://www.darkain.com/vc/">Nintendo Wii Virtual Console Notification Service on Darkain.com</a> via Archive.org</li>
+
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070204075031/http://www.darkain.com/vc/games.php?region=US">Nintendo Wii Virtual Console Games in North America</a> via Archive.org</li>
+
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070206005025/http://www.darkain.com/vc/games.php?region=JP">Nintendo Wii Virtual Console Games in Japan</a> via Archive.org</li>
+
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070204075048/http://www.darkain.com/vc/games.php?region=GB">Nintendo Wii Virtual Console Games in Europe</a> via Archive.org</li>
+
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070204075048/http://www.darkain.com/vc/games.php?region=AU">Nintendo Wii Virtual Console Games in Australia</a> via Archive.org</li>
+
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070206145154/http://www.darkain.com/vc/vcUS.rss">Nintendo Wii Virtual Console RSS Feed</a> via Archive.org</li>
+				</ol></aside>
+			</section>
+
+
+			<section data-tags="web, php">
+				<h2>PodKisser</h2>
+
+				<p>Wrote a simple basic podcast hosting script that would auto-generate the RSS feed based off of the contents of the folder the script lived in. This enabled simple publication of podcast content by authors as all they needed to do was to FTP a file into the folder, and it would automatically update the RSS feed</p>
+
+				<aside><ol>
+					<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20070208185755/http://podkiss.darkain.com/">PodKisser on Darkain.com</a> via Archive.org</li>
 				</ol></aside>
 			</section>
 		</li>
@@ -985,7 +1021,7 @@ aside ul li {
 
 				<p>Discovered an exploit in Microsoft Excel that allowed for full SQL access through VBA instead of the intended support of only SELECT statements. I then used this exploit to write a full SQL INSERT data entry front end and SELECT data reporting system using VBA in Excel 2003. Those scripts have since been ported to Excel 2007. To date, I've yet to publish knowledge of this bug and as far as I know it is still fully exploitable. However, Microsoft has significantly locked down running VBA scripts, so risk is extremely minimal.</p>
 
-				<p><em>2023 Update:</em> So here is the disclosure of the bug. With Excel's VBA, you can run SQL reports via ODBC. However, if you try to run anything other than a SELECT statement, a VBA error is thrown. I discovered that if you simple use <em>"ON ERROR RESUME NEXT"</em> that whatever SQL query was entered would be forwarded through the ODBC driver unmodified. This allowed for INSERT, UPDATE, and any othe query to execute.</p>
+				<p><em>2023 Update:</em> So here is the disclosure of the bug. With Excel's VBA, you can run SQL reports via ODBC. However, if you try to run anything other than a SELECT statement, a VBA error is thrown. I discovered that if you simple use <em>"ON ERROR RESUME NEXT"</em> that whatever SQL query was entered would be forwarded through the ODBC driver unmodified. This allowed for INSERT, UPDATE, and any other query to execute.</p>
 			</section>
 
 
