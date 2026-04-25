@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Mask</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 2vw;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    margin-bottom: 3vh;
+    font-size: clamp(30px, 3vw, 100px);
+    letter-spacing: 2px;
+    color: #00d4ff;
+    text-transform: uppercase;
+    text-shadow: 0 0 clamp(8px, 1vw, 20px) rgba(0, 212, 255, 0.4);
+  }
+
+  .mask-container {
+    display: flex;
+    gap: 1vw;
+    margin-bottom: 4vw;
+    width: 100%;
+    height: 4vw;
+  }
+
+  .group {
+    display: flex;
+    gap: 0.3vw;
+    flex: 1;
+  }
+
+  .bit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5vw;
+    height:4vw;
+    border: 0.1vw solid #333;
+    border-radius: 0.5vw;
+    background: #16213e;
+    color: #555;
+    transition: all 0.2s ease;
+    flex: 1;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .bit.active {
+    background: #0f3460;
+    border-color: #00d4ff;
+    color: #00d4ff;
+    box-shadow: 0 0 1vw rgba(0, 212, 255, 0.3);
+  }
+
+  .group-separator {
+    width: 1vw;
+    flex-shrink: 0;
+  }
+
+  .slider-section {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    width: 100%;
+  }
+
+  .slider-value {
+    font-size: clamp(16px, 2vw, 40px);
+    color: #00d4ff;
+    font-weight: bold;
+    text-shadow: 0 0 clamp(8px, 1vw, 20px) rgba(0, 212, 255, 0.4);
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1vw;
+    background: #16213e;
+    border-radius: 0.5vw;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3vw;
+    height: 3vw;
+    background: #00d4ff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 1vw rgba(0, 212, 255, 0.5);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 3vw;
+    height: 3vw;
+    background: #00d4ff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 1vw rgba(0, 212, 255, 0.5);
+  }
+
+  .info {
+    margin-top: 2vh;
+    font-size: clamp(10px, 1.2vw, 24px);
+    color: #666;
+    text-align: center;
+  }
+
+  .notation {
+    margin: 3vw 0 0.7vw 0;
+    font-size: clamp(16px, 2vw, 40px);
+    color: #ff9800;
+    font-weight: bold;
+    text-shadow: 0 0 clamp(8px, 1vw, 20px) rgba(255, 152, 0, 0.4);
+  }
+
+  @media (max-width: 600px) {
+    .slider-section {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Network Mask</h1>
+
+<div class="mask-container" id="maskContainer"></div>
+
+<div class="slider-section">
+  <input type="range" id="maskSlider" min="0" max="32" value="24">
+</div>
+
+<div class="notation" id="notation">255.255.255.255</div>
+<div class="slider-value" id="sliderValue">/0</div>
+<div class="info">Drag the slider to set the network mask length (0–32)</div>
+
+<script>
+  const container = document.getElementById('maskContainer');
+  const slider = document.getElementById('maskSlider');
+  const valueDisplay = document.getElementById('sliderValue');
+
+  // Build 32 bits in groups of 8
+  for (let g = 0; g < 4; g++) {
+    const group = document.createElement('div');
+    group.className = 'group';
+
+    for (let b = 0; b < 8; b++) {
+      const bit = document.createElement('div');
+      bit.className = 'bit';
+      bit.id = 'bit-' + (g * 8 + b);
+      bit.textContent = '0';
+      group.appendChild(bit);
+    }
+
+    container.appendChild(group);
+
+    if (g < 3) {
+      const sep = document.createElement('div');
+      sep.className = 'group-separator';
+      container.appendChild(sep);
+    }
+  }
+
+  function updateMask(val) {
+    for (let i = 0; i < 32; i++) {
+      const bit = document.getElementById('bit-' + i);
+      if (i < val) {
+        bit.textContent = '1';
+        bit.classList.add('active');
+      } else {
+        bit.textContent = '0';
+        bit.classList.remove('active');
+      }
+    }
+    valueDisplay.textContent = '/' + val;
+
+    // Calculate dotted decimal notation
+    const octets = [];
+    for (let o = 0; o < 4; o++) {
+      let byteVal = 0;
+      for (let b = 0; b < 8; b++) {
+        const bitIndex = o * 8 + b;
+        if (bitIndex < val) {
+          byteVal |= (1 << (7 - b));
+        }
+      }
+      octets.push(byteVal);
+    }
+    document.getElementById('notation').textContent = octets.join('.');
+  }
+
+  slider.addEventListener('input', function() {
+    updateMask(parseInt(this.value));
+  });
+
+  // Initialize — read actual slider value (browser may have restored a different position)
+  updateMask(parseInt(slider.value));
+</script>
+
+</body>
+</html>
